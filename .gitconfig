@@ -1,0 +1,26 @@
+# This is Git's per-user configuration file.
+[alias]
+	todo = ac TODO
+	s = status
+	st = status -s
+	logs = log --oneline
+	br = branch
+	nbr = checkout -b
+	ch = checkout
+	ad = add .
+	rs = reset .
+	c = commit
+	cm = commit -m
+	ac = commit -am
+	amend = commit --amend
+	chp = cherry-pick
+	logr = log --oneline --raw
+	diffc = diff --cached
+	acn = commit -am nothing!
+[core]
+	editor = vim
+[user]
+	name = pooyan
+	email = thepooyan@gmail.com
+[credential]
+	helper = store
