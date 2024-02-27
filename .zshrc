@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# MINE
+# My config
 alias cls=clear
 alias vi="/usr/bin/vim"
 alias hibernate="systemctl hibernate"
