@@ -31,3 +31,10 @@ lspconfig.emmet_ls.setup({
       },
     }
 })
+
+-- auto close html tag
+-- require'nvim-treesitter.configs'.setup {
+--   autotag = {
+--     enable = true,
+--   }
+-- }
