@@ -123,5 +123,6 @@ fuzzyFindFolder() {
 nekoray() {
   sudo ~/appImages/nekoray/nekoray-3.19-2023-08-30-linux-x64.AppImage
 }
+setxkbmap -option caps:escape
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
