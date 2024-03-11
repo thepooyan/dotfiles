@@ -123,6 +123,10 @@ fuzzyFindFolder() {
 nekoray() {
   sudo ~/appImages/nekoray/nekoray-3.19-2023-08-30-linux-x64.AppImage
 }
+obsidian() {
+  ~/appImages/Obsidian/Obsidian-1.5.3.AppImage
+}
+# turn caps lock into another escape 
 setxkbmap -option caps:escape
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
