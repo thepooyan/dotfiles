@@ -200,8 +200,8 @@ bar {
 bindsym $mod+shift+x exec i3lock
 
 # my keybindings for apps
-bindsym $mod+shift+g exec google-chrome-stable
-bindsym $mod+shift+n exec nemo
+bindsym $mod+g exec google-chrome-stable
+bindsym $mod+n exec nemo
 
 #exec firefox #run firefox evertime at login
 
