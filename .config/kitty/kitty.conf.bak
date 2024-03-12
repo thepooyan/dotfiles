@@ -2594,9 +2594,3 @@
 
 #POOYAN (press ctrl shift f5 to reload)
 font_size 15
-
-
-# BEGIN_KITTY_THEME
-# Ayu Mirage
-include current-theme.conf
-# END_KITTY_THEME
