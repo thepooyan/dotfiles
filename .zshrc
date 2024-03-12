@@ -129,4 +129,6 @@ obsidian() {
 # turn caps lock into another escape 
 setxkbmap -option caps:escape
 
+set -o vi
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
