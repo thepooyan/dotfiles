@@ -2,6 +2,7 @@
 [alias]
 	todo = ac TODO
 	s = status
+	b = bisect
 	st = status -s
 	logs = log --oneline
 	br = branch
