@@ -69,10 +69,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -227,3 +227,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec ~/.config/i3/toggletouchpad.sh # toggle touchpad
+
+bindsym $mod+Left exec ~/.config/i3/arrow.sh prev 
+bindsym $mod+Right exec ~/.config/i3/arrow.sh next 
+
+bindsym $mod+ctrl+h exec ~/.config/i3/arrow.sh prev 
+bindsym $mod+ctrl+l exec ~/.config/i3/arrow.sh next 
