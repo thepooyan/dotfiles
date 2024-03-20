@@ -201,7 +201,9 @@ bindsym $mod+shift+x exec i3lock
 
 # my keybindings for apps
 bindsym $mod+g exec google-chrome-stable
+bindsym $mod+y exec firefox-developer-edition
 bindsym $mod+n exec nemo
+bindsym $mod+t exec gnome-terminal
 
 #exec firefox #run firefox evertime at login
 
