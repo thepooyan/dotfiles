@@ -228,8 +228,14 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 # Touchpad controls
 bindsym XF86TouchpadToggle exec ~/.config/i3/toggletouchpad.sh # toggle touchpad
 
-bindsym $mod+Left exec ~/.config/i3/arrow.sh prev 
-bindsym $mod+Right exec ~/.config/i3/arrow.sh next 
+# bindsym $mod+Left exec ~/.config/i3/arrow.sh prev 
+# bindsym $mod+Right exec ~/.config/i3/arrow.sh next 
+#
+# bindsym $mod+ctrl+h exec ~/.config/i3/arrow.sh prev 
+# bindsym $mod+ctrl+l exec ~/.config/i3/arrow.sh next 
 
-bindsym $mod+ctrl+h exec ~/.config/i3/arrow.sh prev 
-bindsym $mod+ctrl+l exec ~/.config/i3/arrow.sh next 
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next 
+
+bindsym $mod+ctrl+h workspace prev
+bindsym $mod+ctrl+l workspace next 
