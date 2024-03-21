@@ -234,8 +234,16 @@ bindsym XF86TouchpadToggle exec ~/.config/i3/toggletouchpad.sh # toggle touchpad
 # bindsym $mod+ctrl+h exec ~/.config/i3/arrow.sh prev 
 # bindsym $mod+ctrl+l exec ~/.config/i3/arrow.sh next 
 
-bindsym $mod+Left workspace prev
-bindsym $mod+Right workspace next 
+bindsym $mod+ctrl+Left workspace prev
+bindsym $mod+ctrl+Right workspace next 
 
 bindsym $mod+ctrl+h workspace prev
 bindsym $mod+ctrl+l workspace next 
+
+# Start the daemon which listens to focus changes and sets _back mark
+exec --no-startup-id /bin/i3-back
+
+# Bind a switch key, which focuses the previously focused window
+bindsym $mod+Tab [con_mark=_back] focus
+
+exec --no-startup-id i3-battery-popup
