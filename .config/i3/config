@@ -49,7 +49,8 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec kitty -- tmux attach
+bindsym $mod+shift+Return exec kitty -- tmux
 
 # kill focused window
 bindsym $mod+q kill
@@ -203,7 +204,8 @@ bindsym $mod+shift+x exec i3lock
 bindsym $mod+g exec google-chrome-stable
 bindsym $mod+y exec firefox-developer-edition
 bindsym $mod+n exec nemo
-bindsym $mod+t exec gnome-terminal
+bindsym $mod+t exec gnome-terminal -- tmux attach
+bindsym $mod+shift+t exec gnome-terminal -- tmux
 
 #exec firefox #run firefox evertime at login
 
