@@ -249,3 +249,4 @@ exec --no-startup-id /bin/i3-back
 bindsym $mod+Tab [con_mark=_back] focus
 
 exec --no-startup-id i3-battery-popup
+exec --no-startup-id picom
