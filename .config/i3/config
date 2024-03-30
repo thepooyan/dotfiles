@@ -209,7 +209,7 @@ bindsym $mod+shift+t exec gnome-terminal -- tmux
 
 #exec firefox #run firefox evertime at login
 
-exec_always feh --bg-scale ~/Pictures/back2.jpg
+exec_always feh --bg-scale ~/Pictures/backgrounds/4.webp
 
 gaps inner 10
 gaps outer 1
