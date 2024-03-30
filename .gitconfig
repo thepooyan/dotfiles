@@ -16,7 +16,8 @@
 	amend = commit --amend
 	chp = cherry-pick
 	logr = log --oneline --raw
-	diffc = diff --cached
+	dc = diff --cached
+  d = diff
 	acn = commit -am nothing!
 [core]
 	editor = vim
