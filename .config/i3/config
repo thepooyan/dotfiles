@@ -213,7 +213,7 @@ exec_always feh --bg-scale ~/Pictures/backgrounds/4.webp
 
 gaps inner 10
 gaps outer 1
-smart_gaps on
+# smart_gaps on
 
 default_border pixel 0
 
