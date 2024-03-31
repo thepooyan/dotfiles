@@ -1,5 +1,6 @@
 # This is Git's per-user configuration file.
 [alias]
+  bug = ac BUG
 	todo = ac TODO
 	s = status
 	b = bisect
