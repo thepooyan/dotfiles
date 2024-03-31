@@ -250,4 +250,4 @@ bindsym $mod+Tab [con_mark=_back] focus
 
 exec --no-startup-id i3-battery-popup
 exec --no-startup-id picom
-exec --no-startup-id polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
