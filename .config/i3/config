@@ -242,12 +242,12 @@ bindsym $mod+ctrl+Right workspace next
 bindsym $mod+ctrl+h workspace prev
 bindsym $mod+ctrl+l workspace next 
 
-# Start the daemon which listens to focus changes and sets _back mark
-exec --no-startup-id /bin/i3-back
-
 # Bind a switch key, which focuses the previously focused window
-bindsym $mod+Tab [con_mark=_back] focus
+bindsym $mod+Tab workspace back_and_forth
 
 exec --no-startup-id i3-battery-popup
 exec --no-startup-id picom
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+
+workspace_auto_back_and_forth yes
