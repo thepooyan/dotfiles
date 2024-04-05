@@ -4,7 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 --
 -- -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd" }
+local servers = { "html", "cssls", "tsserver", "clangd", "tailwindcss", "tsserver" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -30,14 +30,4 @@ lspconfig.emmet_ls.setup({
         },
       },
     }
-})
-
-lspconfig.tsserver.setup({
-  on_attach = on_attach,
-  capabilities = capabilities
-});
-
-lspconfig.tailwindcss.setup({
-  on_attach = on_attach,
-  capabilities = capabilities
 })
