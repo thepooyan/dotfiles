@@ -37,6 +37,8 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+    "tailwind-languege-server",
+
   },
 }
 

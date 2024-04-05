@@ -36,3 +36,8 @@ lspconfig.tsserver.setup({
   on_attach = on_attach,
   capabilities = capabilities
 });
+
+lspconfig.tailwindcss.setup({
+  on_attach = on_attach,
+  capabilities = capabilities
+})
