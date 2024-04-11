@@ -1,14 +1,12 @@
 # This is Git's per-user configuration file.
 [alias]
-  bug = ac BUG
-	todo = ac TODO
 	s = status
 	b = bisect
 	st = status -s
 	logs = log --oneline
 	br = branch
-	nbr = checkout -b
 	ch = checkout
+	nbr = checkout -b
 	ad = add .
 	rs = reset .
 	c = commit
@@ -16,10 +14,14 @@
 	ac = commit -am
 	amend = commit --amend
 	chp = cherry-pick
-	logr = log --oneline --raw
-	dc = diff --cached
+	rlogs = logs --raw
+	rlog = log --raw
   d = diff
-	acn = commit -am nothing!
+	dc = diff --cached
+	acn = ac nothing!
+	act = ac TODO
+  bug = ac BUG
+	todo = ac TODO
 [core]
 	editor = vim
 [user]
