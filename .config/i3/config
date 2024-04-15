@@ -252,3 +252,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 
 workspace_auto_back_and_forth yes
+
+# free resize
+bindsym $mod+Mod1+h resize shrink width 10 px or 10 ppt
+bindsym $mod+Mod1+j resize grow height 10 px or 10 ppt
+bindsym $mod+Mod1+k resize shrink height 10 px or 10 ppt
+bindsym $mod+Mod1+l resize grow width 10 px or 10 ppt
