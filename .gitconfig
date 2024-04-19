@@ -14,8 +14,8 @@
 	ac = commit -am
 	amend = commit --amend
 	chp = cherry-pick
-	rlogs = logs --raw
-	rlog = log --raw
+	logsr = logs --raw
+	logr = log --raw
   d = diff
 	dc = diff --cached
 	acn = ac nothing!
