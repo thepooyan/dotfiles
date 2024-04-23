@@ -22,6 +22,7 @@
 	act = ac TODO
   bug = ac BUG
 	todo = ac TODO
+	ren = ac RENAME
 [core]
 	editor = vim
 [user]
