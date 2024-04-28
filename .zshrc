@@ -133,6 +133,5 @@ set -o vi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-alias cd=z
 
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
