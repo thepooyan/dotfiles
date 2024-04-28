@@ -132,3 +132,4 @@ setxkbmap -option caps:escape
 set -o vi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(zoxide init zsh)"
