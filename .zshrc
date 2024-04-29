@@ -139,3 +139,5 @@ set -o vi
 
 
 eval "$(zoxide init --cmd cd zsh)"
+
+alias cat=bat
