@@ -141,3 +141,5 @@ set -o vi
 eval "$(zoxide init --cmd cd zsh)"
 
 alias cat=bat
+alias ls=exa
+alias tree="exa --tree"
