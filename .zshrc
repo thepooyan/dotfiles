@@ -113,6 +113,10 @@ ide() {
 	cc && nvim .
 }
 
+zde() {
+ cd $@ && nvim .
+}
+
 cc() {
 	cd "$(fuzzyFindFolder)"
 }
