@@ -19,6 +19,7 @@ applications=(
     "ripgrep"
     "zsh"
     "stow"
+    "entr"
 
     # i3
     "i3"
