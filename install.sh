@@ -15,17 +15,20 @@ applications=(
     "bat"
     "fzf"
     "vim"
+    "neovim"
     "exa"
+    "entr"
     "ripgrep"
     "zsh"
     "stow"
-    "entr"
+    "yay"
 
     # i3
     "i3"
     "arandr"
     "i3-battery-popup"
     "picom"
+    "polybar"
     "xbacklight"
     "playerctl"
     "feh"
@@ -34,10 +37,10 @@ applications=(
 
     # apps
     "firefox-developer-edition"
-    "google-chrome-stable"
     "kitty"
-    ""
-    ""
+
+    #flatpack
+    "flatpack"
 )
 
 # sudo pacman -Syu
