@@ -1,3 +1,3 @@
 yay -S google-chrome
-yay -S picom
+yay -S picom-git
 yay -S postman-bin
