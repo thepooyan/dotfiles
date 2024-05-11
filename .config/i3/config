@@ -203,9 +203,9 @@ bindsym $mod+shift+x exec i3lock -c 000000
 # my keybindings for apps
 bindsym $mod+g exec google-chrome-stable
 bindsym $mod+y exec firefox-developer-edition
-bindsym $mod+n exec nemo
-bindsym $mod+t exec gnome-terminal -- tmux attach
-bindsym $mod+shift+t exec gnome-terminal -- tmux
+bindsym $mod+n exec dolphin
+bindsym $mod+t exec konsole -e 'tmux attach'
+bindsym $mod+shift+t exec konsole -e tmux
 
 #exec firefox #run firefox evertime at login
 
