@@ -1,9 +1,7 @@
 #!/bin/bash
-
-
 applications=(
     # codeing
-    "node"
+    "nodejs"
     "npm"
     "git"
     "code"
@@ -27,7 +25,7 @@ applications=(
     "i3"
     "arandr"
     "i3-battery-popup"
-    "picom"
+    # "picom"
     "polybar"
     "xbacklight"
     "playerctl"
@@ -39,15 +37,17 @@ applications=(
     "firefox-developer-edition"
     "kitty"
 
-    #flatpack
-    "flatpack"
+    #flatpak
+    "flatpak"
 )
 
-# sudo pacman -Syu
+sudo pacman -S --needed base-devel
+sudo pacman -Syu
 
-for app in "${applications[@]}"; do
-    sudo pacman -S --noconfirm "$app"
-done
+# for app in "${applications[@]}"; do
+#     sudo pacman -S --noconfirm "$app"
+# done
+sudo pacman -S --noconfirm "$applications"
 
 # oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
