@@ -6,6 +6,7 @@ applications=(
     "git"
     "code"
     "nvim"
+    "go"
 
     # terminal
     "tmux"
@@ -39,6 +40,13 @@ applications=(
 
     #flatpak
     "flatpak"
+
+    #fyne
+    "xorg-server-devel"
+    "libxcursor"
+    "libxrandr"
+    "libxinerama"
+    "libxi"
 )
 
 sudo pacman -S --needed base-devel
