@@ -7,6 +7,7 @@ applications=(
     "code"
     "nvim"
     "go"
+    "mariadb"
 
     # terminal
     "tmux"
