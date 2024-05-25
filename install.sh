@@ -22,6 +22,7 @@ applications=(
     "zsh"
     "stow"
     "yay"
+    "sshpass"
 
     # i3
     "i3"
