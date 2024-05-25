@@ -101,6 +101,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # My config
+[ -f ./pass.sh ] && source ./pass.sh
+
 alias cls=clear
 alias vi="/usr/bin/vim"
 alias hibernate="systemctl hibernate"
@@ -130,6 +132,11 @@ nekoray() {
 obsidian() {
   ~/appImages/Obsidian/Obsidian-1.5.3.AppImage
 }
+
+clickdent() {
+  sshpass -p $CLICKDENT ssh -p 8022 $CLICKDENT_IP
+}
+
 # turn caps lock into another escape 
 setxkbmap -option caps:escape
 
