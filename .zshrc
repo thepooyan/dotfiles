@@ -137,6 +137,14 @@ clickdent() {
   sshpass -p $CLICKDENT ssh -p 8022 $CLICKDENT_IP
 }
 
+fm() {
+  if [ $1 ]; then
+    dolphin $1&
+  else
+    dolphin "$(find . -type d | fzf)"&
+  fi
+}
+
 # turn caps lock into another escape 
 setxkbmap -option caps:escape
 
