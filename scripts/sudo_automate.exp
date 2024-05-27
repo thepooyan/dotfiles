@@ -1,0 +1,21 @@
+#!/usr/bin/expect -f
+
+# Set the timeout for the expect command
+set timeout -1
+
+# Get the arguments (password and command to run)
+set password [lindex $argv 0]
+set command [lindex $argv 1]
+
+# Start the command with sudo
+spawn sudo $command
+
+# Look for the password prompt and send the password
+expect {
+    "assword:" {
+        send "$password\r"
+        exp_continue
+    }
+    eof
+}
+
