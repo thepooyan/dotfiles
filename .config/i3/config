@@ -232,3 +232,8 @@ bindsym $mod+Mod1+h exec "i3-msg resize grow left 10 px or 10 ppt || i3-msg resi
 bindsym $mod+Mod1+j exec "i3-msg resize grow down 10 px or 10 ppt || i3-msg resize shrink up 10 px or 10 ppt"
 bindsym $mod+Mod1+k exec "i3-msg resize grow up 10 px or 10 ppt || i3-msg resize shrink down 10 px or 10 ppt"
 bindsym $mod+Mod1+l exec "i3-msg resize grow right 10 px or 10 ppt || i3-msg resize shrink left 10 px or 10 ppt"
+
+bindsym $mod+Mod1+Left exec "i3-msg resize grow left 10 px or 10 ppt || i3-msg resize shrink right 10 px or 10 ppt"
+bindsym $mod+Mod1+Down exec "i3-msg resize grow down 10 px or 10 ppt || i3-msg resize shrink up 10 px or 10 ppt"
+bindsym $mod+Mod1+Up exec "i3-msg resize grow up 10 px or 10 ppt || i3-msg resize shrink down 10 px or 10 ppt"
+bindsym $mod+Mod1+Right exec "i3-msg resize grow right 10 px or 10 ppt || i3-msg resize shrink left 10 px or 10 ppt"
