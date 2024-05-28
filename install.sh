@@ -8,8 +8,10 @@ applications=(
     "nvim"
     "go"
     "mariadb"
+    # jdk
 
     # terminal
+    "xclip"
     "tmux"
     "zoxide"
     "bat"
