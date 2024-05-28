@@ -133,6 +133,11 @@ obsidian() {
   ~/appImages/Obsidian/Obsidian-1.5.3.AppImage
 }
 
+clipboard() {
+  read -r input
+  echo "$input" | xclip -selection clipboard
+}
+
 clickdent() {
   sshpass -p $CLICKDENT ssh -p 8022 $CLICKDENT_IP
 }
