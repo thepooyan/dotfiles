@@ -257,3 +257,5 @@ mode "command" {
 }
 
 bindsym $mod+c mode "command"
+
+exec --no-startup-id ~/scripts/setup_monitors.sh
