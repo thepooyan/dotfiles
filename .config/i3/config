@@ -252,6 +252,9 @@ mode "command" {
   bindsym s exec "shutdown 0"; mode "default"
   bindsym r exec "reboot"; mode "default"
   bindsym l exec i3lock -c 000000; mode "default"
+  bindsym h exec "hibernate"; mode "default"
+  bindsym e exec i3-msg exit; mode "default"
+
 
   bindsym e mode "default"
 }
