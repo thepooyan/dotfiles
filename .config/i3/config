@@ -170,9 +170,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # reload the i3 to source the config with $mod + shift + r
 # run arandr to configure monitors (save settins and copy the shell command in here)
 
-# lock with mod shift x
-bindsym $mod+shift+x exec i3lock -c 000000
-
 # my keybindings for apps
 bindsym $mod+o exec "~/appImages/Obsidian/Obsidian-1.5.3.AppImage"
 bindsym $mod+g exec google-chrome-stable
@@ -244,6 +241,19 @@ mode "luncher" {
   bindsym i exec com.jetbrains.IntelliJ-IDEA-Community; mode "default"
   bindsym a exec arandr; mode "default"
   bindsym b exec blueman-manager; mode "default"
+
+  bindsym e mode "default"
 }
 
 bindsym $mod+z mode "luncher"
+
+# command line
+mode "command" {
+  bindsym s exec "shutdown 0"; mode "default"
+  bindsym r exec "reboot"; mode "default"
+  bindsym l exec i3lock -c 000000; mode "default"
+
+  bindsym e mode "default"
+}
+
+bindsym $mod+c mode "command"
