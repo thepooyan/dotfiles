@@ -25,6 +25,7 @@ applications=(
     "stow"
     "yay"
     "sshpass"
+    "mlocate"
 
     # i3
     "i3"
