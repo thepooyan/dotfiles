@@ -130,7 +130,7 @@ fuzzyFindFolder() {
 # app images
 
 nekoray() {
-  sudo ~/appImages/nekoray/nekoray-3.19-2023-08-30-linux-x64.AppImage
+  echo $PASS | sudo -S ~/appImages/nekoray/nekoray-3.19-2023-08-30-linux-x64.AppImage
 }
 obsidian() {
   ~/appImages/Obsidian/Obsidian-1.5.3.AppImage
