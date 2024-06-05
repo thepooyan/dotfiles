@@ -1,0 +1,1 @@
+- add a response system for different modes and command mode feebbacks
