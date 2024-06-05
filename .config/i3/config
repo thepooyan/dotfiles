@@ -255,6 +255,7 @@ mode "command" {
   bindsym l exec i3lock -c 000000; mode "default"
   bindsym h exec "systemctl hibernate"; mode "default"
   bindsym e exec i3-msg exit; mode "default"
+  bindsym m exec "~/scripts/setup_monitors.sh"; mode "default"
 
 
   bindsym e mode "default"
