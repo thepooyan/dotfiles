@@ -153,20 +153,12 @@ fm() {
   fi
 }
 
-# turn caps lock into another escape 
-setxkbmap -option caps:escape
-
 set -o vi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 
 eval "$(zoxide init --cmd cd zsh)"
 
 alias cat=bat
 alias ls=exa
 alias tree="exa --tree"
-
-# switch to fa languege
-setxkbmap -layout us,ir
-setxkbmap -option 'grp:ctrl_alt_toggle'
