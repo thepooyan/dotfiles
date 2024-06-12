@@ -8,8 +8,8 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 zinit light zsh-users/zsh-syntax-highlighting
-# zinit light zsh-users/zsh-completions
-# autoload -Uz compinit && compinit
+zinit light zsh-users/zsh-completions
+autoload -Uz compinit && compinit
 
 # History
 HISTSIZE=5000
@@ -25,6 +25,10 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 zinit light zsh-users/zsh-autosuggestions
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # My config
 [ -f ./pass.sh ] && source ./pass.sh
