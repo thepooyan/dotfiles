@@ -243,7 +243,7 @@ mode "luncher" {
   bindsym b exec blueman-manager; mode "default"
   bindsym n exec "sudo ~/appImages/nekoray/nekoray-3.19-2023-08-30-linux-x64.AppImage"; mode "default"
 
-  bindsym e mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+z mode "luncher"
@@ -258,7 +258,7 @@ mode "command" {
   bindsym m exec "~/scripts/setup_monitors.sh"; mode "default"
 
 
-  bindsym e mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+c mode "command"
@@ -266,4 +266,4 @@ bindsym $mod+c mode "command"
 exec --no-startup-id ~/scripts/setup_monitors.sh
 exec --no-startup-id ~/scripts/boot.sh
 
-exec_always i3-msg 'workspace 4; exec "kitty tmux new-session -A -s TODO nvim ~/0\ Pooyan/TODO/Board.md"'
+exec --no-startup-id i3-msg 'workspace 4; exec "kitty tmux new-session -A -s TODO nvim ~/0\ Pooyan/TODO/Board.md"'
