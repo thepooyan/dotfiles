@@ -9,6 +9,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
+zinit light Aloxaf/fzf-tab
 autoload -Uz compinit && compinit
 
 # History
@@ -29,6 +30,7 @@ zinit light zsh-users/zsh-autosuggestions
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
 
 # My config
 [ -f ./pass.sh ] && source ./pass.sh
