@@ -102,6 +102,8 @@ set -o vi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+bindkey -r viins '\ec'
+
 eval "$(zoxide init --cmd cd zsh)"
 
 eval "$(starship init zsh)"
