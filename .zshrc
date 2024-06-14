@@ -44,7 +44,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # zinit snippet OMZP::command-not-found
 
 # My config
-[ -f ./pass.sh ] && source ./pass.sh
 
 alias cls=clear
 alias vi="/usr/bin/vim"
@@ -74,6 +73,7 @@ fuzzyFindFolder() {
 }
 
 nekoray() {
+  [ -f ./pass.sh ] && source ./pass.sh
   echo $PASS | sudo -S ~/appImages/nekoray/nekoray-3.19-2023-08-30-linux-x64.AppImage
 }
 
@@ -87,6 +87,7 @@ clipboard() {
 }
 
 clickdent() {
+  [ -f ./pass.sh ] && source ./pass.sh
   sshpass -p $CLICKDENT ssh -p 8022 $CLICKDENT_IP
 }
 
