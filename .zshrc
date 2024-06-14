@@ -90,6 +90,10 @@ clickdent() {
   sshpass -p $CLICKDENT ssh -p 8022 $CLICKDENT_IP
 }
 
+viewClipboard() {
+  xclip -o -sel clip
+}
+
 fm() {
   if [ $1 ]; then
     dolphin $1&
