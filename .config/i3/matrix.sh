@@ -35,33 +35,29 @@ if [[ $isMatrix = true ]]; then
     if ((dy < 1)); then
       dy=3
     fi
-    echo dest: $dy$current_X
-    i3-msg workspace number $dy$current_X
+    echo $dy$current_X
   fi
   if [[ $direction == down ]]; then
     dy=$((current_Y+1))
     if ((dy > 3)); then
       dy=1
     fi
-    echo dest: $dy$current_X
-    i3-msg workspace number $dy$current_X
+    echo $dy$current_X
   fi
   if [[ $direction == left ]]; then
     dx=$((current_X-1))
     if ((dx < 1)); then
       dx=3
     fi
-    echo dest: $current_Y$dx
-    i3-msg workspace number $current_Y$dx
+    echo $current_Y$dx
   fi
   if [[ $direction == right ]]; then
     dx=$((current_X+1))
     if ((dx > 3)); then
       dx=1
     fi
-    echo dest: $current_Y$dx
-    i3-msg workspace number $current_Y$dx
+    echo $current_Y$dx
   fi
 else 
-  i3-msg workspace number $(get_workspace_num $direction)
+  get_workspace_num $direction
 fi

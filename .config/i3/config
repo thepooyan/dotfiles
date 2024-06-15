@@ -217,10 +217,15 @@ bindsym XF86TouchpadToggle exec ~/.config/i3/toggletouchpad.sh # toggle touchpad
 # bindsym $mod+ctrl+u exec ~/.config/i3/arrow.sh prev 
 # bindsym $mod+ctrl+o exec ~/.config/i3/arrow.sh next 
 
-bindsym $mod+ctrl+h exec ~/.config/i3/matrix.sh left
-bindsym $mod+ctrl+l exec ~/.config/i3/matrix.sh right
-bindsym $mod+ctrl+j exec ~/.config/i3/matrix.sh down
-bindsym $mod+ctrl+k exec ~/.config/i3/matrix.sh up
+bindsym $mod+ctrl+h exec "i3-msg workspace number $(~/.config/i3/matrix.sh left)"
+bindsym $mod+ctrl+l exec "i3-msg workspace number $(~/.config/i3/matrix.sh right)"
+bindsym $mod+ctrl+j exec "i3-msg workspace number $(~/.config/i3/matrix.sh down)"
+bindsym $mod+ctrl+k exec "i3-msg workspace number $(~/.config/i3/matrix.sh up)"
+
+bindsym $mod+Shift+ctrl+h exec "i3-msg move workspace number $(~/.config/i3/matrix.sh left)"
+bindsym $mod+Shift+ctrl+l exec "i3-msg move workspace number $(~/.config/i3/matrix.sh right)"
+bindsym $mod+Shift+ctrl+j exec "i3-msg move workspace number $(~/.config/i3/matrix.sh down)"
+bindsym $mod+Shift+ctrl+k exec "i3-msg move workspace number $(~/.config/i3/matrix.sh up)"
 
 bindsym $mod+ctrl+m exec ~/.config/i3/matrix.sh
 # bindsym $mod+ctrl+Left workspace prev
