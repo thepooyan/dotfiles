@@ -227,7 +227,7 @@ bindsym $mod+Shift+ctrl+l exec "i3-msg move workspace number $(~/.config/i3/matr
 bindsym $mod+Shift+ctrl+j exec "i3-msg move workspace number $(~/.config/i3/matrix.sh down)"
 bindsym $mod+Shift+ctrl+k exec "i3-msg move workspace number $(~/.config/i3/matrix.sh up)"
 
-bindsym $mod+ctrl+m exec ~/.config/i3/matrix.sh
+bindsym $mod+m exec "i3-msg workspace number 22"
 # bindsym $mod+ctrl+Left workspace prev
 # bindsym $mod+ctrl+Right workspace next 
 
