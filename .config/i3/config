@@ -126,6 +126,19 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# matrix
+# set $ws11 "11: u-l"
+# set $ws12 "12: u-m"
+# set $ws13 "13: u-r"
+# set $ws22 "21: m-l"
+# set $ws22 "22: m-m"
+# set $ws23 "23: m-r"
+# set $ws31 "31: b-l"
+# set $ws32 "32: b-m"
+# set $ws33 "33: b-r"
+
+
+
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
