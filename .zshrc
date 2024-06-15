@@ -1,3 +1,4 @@
+FILE_MNGR=dolphin
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 if [ ! -d "$ZINIT_HOME" ]; then
@@ -99,9 +100,9 @@ viewClipboard() {
 
 fm() {
   if [ $1 ]; then
-    dolphin $1&
+    $FILE_MNGR $1&
   else
-    dolphin "$(find . -type d | fzf)"&
+    $FILE_MNGR "$(fuzzyFindFolder)"
   fi
 }
 
