@@ -52,6 +52,10 @@ alias cat=bat
 alias ls=exa
 alias tree="exa --tree"
 
+get_pass() {
+  pass show $1
+}
+
 vim() {
 	nvim "$1"
 }
@@ -73,8 +77,7 @@ fuzzyFindFolder() {
 }
 
 nekoray() {
-  [ -f ./pass.sh ] && source ./pass.sh
-  echo $PASS | sudo -S ~/appImages/nekoray/nekoray-3.19-2023-08-30-linux-x64.AppImage
+  get_pass pass | sudo -S ~/appImages/nekoray/nekoray-3.19-2023-08-30-linux-x64.AppImage
 }
 
 obsidian() {
@@ -87,8 +90,7 @@ clipboard() {
 }
 
 clickdent() {
-  [ -f ./pass.sh ] && source ./pass.sh
-  sshpass -p $CLICKDENT ssh -p 8022 $CLICKDENT_IP
+  sshpass -p $(get_pass clickdent_pass) ssh -p 8022 $(get_pass clickdent_ip)
 }
 
 viewClipboard() {
