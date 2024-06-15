@@ -265,5 +265,6 @@ bindsym $mod+c mode "command"
 
 exec --no-startup-id ~/scripts/setup_monitors.sh
 exec --no-startup-id ~/scripts/boot.sh
+exec --no-startup-id ~/scripts/updateClock.sh
 
 exec --no-startup-id i3-msg 'workspace 4; exec "kitty tmux new-session -A -s TODO nvim ~/0\ Pooyan/TODO/Board.md"'
