@@ -11,6 +11,7 @@ applications=(
     # jdk
 
     # terminal
+    "jq"
     "xclip"
     "tmux"
     "zoxide"
