@@ -32,7 +32,6 @@ applications=(
     "i3"
     "arandr"
     "i3-battery-popup"
-    # "picom"
     "polybar"
     "xbacklight"
     "playerctl"
