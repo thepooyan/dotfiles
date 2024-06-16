@@ -13,7 +13,7 @@ if [ -z "$1" ]; then
 fi
 
 echo running $1 with logs...
-logs_file="$logs_folder$1.logs"
+logs_file="$logs_folder$(basename "$1").logs"
 
 if [ ! -f "$logs_file" ];then
   echo log file created: $logs_file
@@ -23,5 +23,5 @@ echo _______________________________________ >> "$logs_file"
 echo Date: $(date) >> "$logs_file"
 echo Logs: >> "$logs_file"
 echo "" >> "$logs_file"
-./$1 >> "$logs_file" 2>&1
+$1 >> "$logs_file" 2>&1
 
