@@ -272,7 +272,7 @@ mode "command" {
   bindsym l exec i3lock -c 000000; mode "default"
   bindsym h exec "systemctl hibernate"; mode "default"
   bindsym e exec i3-msg exit; mode "default"
-  bindsym m exec "~/scripts/setup_monitors.sh"; mode "default"
+  bindsym m exec "~/dotfiles/scripts/setup_monitors.sh"; mode "default"
 
 
   bindsym Escape mode "default"
@@ -281,8 +281,8 @@ mode "command" {
 bindsym $mod+c mode "command"
 
 # startup
-exec --no-startup-id ~/scripts/setup_monitors.sh
-exec --no-startup-id ~/scripts/boot.sh
-exec --no-startup-id ~/scripts/updateClock.sh
+exec --no-startup-id ~/dotfiles/scripts/setup_monitors.sh
+exec --no-startup-id ~/dotfiles/scripts/boot.sh
+exec --no-startup-id ~/dotfiles/scripts/updateClock.sh
 
 exec --no-startup-id i3-msg 'workspace 4; exec "kitty tmux new-session -A -s TODO nvim ~/0\ Pooyan/TODO/Board.md"'
