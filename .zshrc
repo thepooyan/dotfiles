@@ -52,6 +52,7 @@ alias hibernate="systemctl hibernate"
 alias cat=bat
 alias ls=exa
 alias tree="exa --tree"
+alias logger="~/dotfiles/scripts/logger.sh"
 
 get_pass() {
   pass show $1
