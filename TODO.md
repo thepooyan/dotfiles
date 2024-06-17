@@ -5,5 +5,6 @@
 - scan the scripts window and add them to command mode. command letter can be specified in the filename
 
 - add fm command runner using rofi
-- add slide animations for matrix when using picom
+- add slide animations for matrix when using picom (maybe i should try hyperland first to see which one works best for this)
+
 
