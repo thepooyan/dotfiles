@@ -53,6 +53,7 @@ alias cat=bat
 alias ls=exa
 alias tree="exa --tree"
 alias logger="~/dotfiles/scripts/logger.sh"
+alias boot="~/dotfiles/scripts/boot.sh"
 
 get_pass() {
   pass show $1
