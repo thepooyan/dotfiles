@@ -11,6 +11,7 @@ applications=(
     # jdk
 
     # terminal
+    "xdotool"
     "jq"
     "xclip"
     "tmux"
