@@ -12,6 +12,11 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
+if [ ! -x "$1" ]; then
+  echo File specifed not a script: $1
+  exit 1
+fi
+
 echo running $1 with logs...
 logs_file="$logs_folder$(basename "$1").logs"
 
