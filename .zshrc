@@ -100,6 +100,10 @@ viewClipboard() {
   xclip -o -sel clip
 }
 
+watch() {
+  ls * | entr sh -cc "clear && ./$1"
+}
+
 fm() {
   if [ $1 ]; then
     $FILE_MNGR $1&
