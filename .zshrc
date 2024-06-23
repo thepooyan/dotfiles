@@ -96,6 +96,10 @@ clickdent() {
   sshpass -p $(get_pass clickdent_pass) ssh -p 8022 $(get_pass clickdent_ip)
 }
 
+sendTo() {
+  sshpass -p "$(get_pass clickdent_pass)" scp -P 8022 $1 salmani@00000000:/home/salmani
+}
+
 viewClipboard() {
   xclip -o -sel clip
 }
