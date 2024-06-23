@@ -42,6 +42,7 @@ applications=(
 
     # apps
     "firefox-developer-edition"
+    "vivaldi"
     "kitty"
 
     #flatpak
