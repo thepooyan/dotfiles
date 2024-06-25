@@ -186,8 +186,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # my keybindings for apps
 bindsym $mod+o exec "~/appImages/Obsidian/Obsidian-1.5.3.AppImage"
 bindsym $mod+g exec google-chrome-stable
-bindsym $mod+y exec firefox-developer-edition
-bindsym $mod+v exec vivaldi
+bindsym $mod+y exec vivaldi
 bindsym $mod+n exec "dolphin --new-window /home/pooyan/"
 bindsym $mod+t exec konsole -e 'tmux attach'
 bindsym $mod+shift+t exec konsole -e tmux
