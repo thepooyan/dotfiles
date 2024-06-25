@@ -108,6 +108,10 @@ watch() {
   ls * | entr sh -cc "clear && ./$1"
 }
 
+generate_pacman_logs() {
+  grep "pacman -S [a-zA-Z].*" /var/log/pacman.log | awk -F"'" '{print $2}' | awk '!seen[$0]++' | cat
+}
+
 fm() {
   if [ $1 ]; then
     $FILE_MNGR $1&
