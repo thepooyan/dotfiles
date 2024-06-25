@@ -126,7 +126,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# matrix
+# atrix
 # set $ws11 "11: u-l"
 # set $ws12 "12: u-m"
 # set $ws13 "13: u-r"
@@ -227,6 +227,16 @@ bindsym $mod+Shift+ctrl+h exec "i3-msg move workspace number $(~/.config/i3/matr
 bindsym $mod+Shift+ctrl+l exec "i3-msg move workspace number $(~/.config/i3/matrix.sh right)"
 bindsym $mod+Shift+ctrl+j exec "i3-msg move workspace number $(~/.config/i3/matrix.sh down)"
 bindsym $mod+Shift+ctrl+k exec "i3-msg move workspace number $(~/.config/i3/matrix.sh up)"
+
+bindsym $mod+ctrl+Left exec "i3-msg workspace number $(~/.config/i3/matrix.sh left)"
+bindsym $mod+ctrl+Right exec "i3-msg workspace number $(~/.config/i3/matrix.sh right)"
+bindsym $mod+ctrl+Down exec "i3-msg workspace number $(~/.config/i3/matrix.sh down)"
+bindsym $mod+ctrl+Up exec "i3-msg workspace number $(~/.config/i3/matrix.sh up)"
+
+bindsym $mod+ctrl+Shift+Left exec "i3-msg move workspace number $(~/.config/i3/matrix.sh left); i3-msg workspace number $(~/.config/i3/matrix.sh left)"
+bindsym $mod+ctrl+Shift+Right exec "i3-msg move workspace number $(~/.config/i3/matrix.sh right); i3-msg workspace number $(~/.config/i3/matrix.sh right)"
+bindsym $mod+ctrl+Shift+Down exec "i3-msg move workspace number $(~/.config/i3/matrix.sh down); i3-msg workspace number $(~/.config/i3/matrix.sh down)"
+bindsym $mod+ctrl+Shift+Up exec "i3-msg move workspace number $(~/.config/i3/matrix.sh up); i3-msg workspace number $(~/.config/i3/matrix.sh up)"
 
 bindsym $mod+m exec "i3-msg workspace number 22"
 # bindsym $mod+ctrl+Left workspace prev
