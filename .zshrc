@@ -51,7 +51,7 @@ alias vi="/usr/bin/vim"
 alias hibernate="systemctl hibernate"
 alias cat=bat
 alias ls=exa
-alias tree="exa --tree"
+alias tree="eza --tree"
 alias logger="~/dotfiles/scripts/logger.sh"
 alias boot="~/dotfiles/scripts/boot.sh"
 
