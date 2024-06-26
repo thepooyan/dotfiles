@@ -20,7 +20,7 @@ applications=(
     "fzf"
     "vim"
     "neovim"
-    "exa"
+    "eza"
     "entr"
     "ripgrep"
     "zsh"
