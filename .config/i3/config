@@ -238,8 +238,7 @@ bindsym $mod+ctrl+Shift+Down exec "i3-msg move workspace number $(~/.config/i3/m
 bindsym $mod+ctrl+Shift+Up exec "i3-msg move workspace number $(~/.config/i3/matrix.sh up); i3-msg workspace number $(~/.config/i3/matrix.sh up)"
 
 bindsym $mod+m exec "i3-msg workspace number 22"
-# bindsym $mod+ctrl+Left workspace prev
-# bindsym $mod+ctrl+Right workspace next 
+bindsym $mod+Shift+m exec "i3-msg move workspace number 22"
 
 # Bind a switch key, which focuses the previously focused window
 bindsym $mod+Tab workspace back_and_forth
