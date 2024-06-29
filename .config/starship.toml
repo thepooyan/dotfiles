@@ -1,4 +1,3 @@
-# Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Inserts a blank line between shell prompts
@@ -11,3 +10,8 @@
 # Disable the package module, hiding it from the prompt completely
 # [package]
 # disabled = true
+
+right_format = """
+$git_status
+$git_branch
+"""
