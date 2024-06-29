@@ -12,6 +12,30 @@
 # disabled = true
 
 right_format = """
-$git_status
-$git_branch
+$git_status\
+$git_branch\
 """
+
+format = """
+$directory\
+$docker_context\
+$c\
+$cmake\
+$deno\
+$dotnet\
+$java\
+$kotlin\
+$lua\
+$python\
+$memory_usage\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$os\
+$container\
+$shell\
+$character"""
