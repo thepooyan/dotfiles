@@ -1,26 +1,13 @@
-# ~/.config/starship.toml
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
 
-# Define the prompt order
-format = """
-$all
-$right_prompt
-"""
+# Inserts a blank line between shell prompts
+# add_newline = false
 
-# Configure the right prompt
-[right_prompt]
-format = """
-$git_branch$git_commit$git_state$git_status
-"""
+# Replace the '❯' symbol in the prompt with '➜'
+# [character] # The name of the module we are configuring is 'character'
+# success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
 
-# Configure the Git modules as needed
-[git_branch]
-format = "[$branch]($style) "
-
-[git_commit]
-format = "[$hash]($style) "
-
-[git_state]
-format = '([$state( $progress_current/$progress_total)])($style) '
-
-[git_status]
-format = '([\[$all_status$ahead_behind\]]($style)) '
+# Disable the package module, hiding it from the prompt completely
+# [package]
+# disabled = true
