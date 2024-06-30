@@ -33,8 +33,12 @@ obsidian() {
 }
 
 clipboard() {
-  read -r input
-  echo "$input" | xclip -selection clipboard
+  [ ! -z "$1" ] && {
+    echo "$@" | xclip -selection clipboard
+  } || {
+    read -r input
+    echo "$input" | xclip -selection clipboard
+  }
 }
 
 clickdent() {
