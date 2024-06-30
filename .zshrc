@@ -120,6 +120,11 @@ fm() {
   fi
 }
 
+regenerate_spotify() {
+  pass remove spoti
+  pass generate -c spoti
+}
+
 set -o vi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
