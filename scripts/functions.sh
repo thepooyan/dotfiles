@@ -54,7 +54,7 @@ watch() {
 }
 
 generate_pacman_logs() {
-  grep "pacman -S [a-zA-Z].*" /var/log/pacman.log | awk -F"'" '{print $2}' | awk '!seen[$0]++' | cat
+  grep "pacman -S [a-zA-Z].*" /var/log/pacman.log | awk -F"'" '{print $2}' | awk '!seen[$0]++' | tac | cat
 }
 
 fm() {
