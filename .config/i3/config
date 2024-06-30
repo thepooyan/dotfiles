@@ -193,7 +193,7 @@ bindsym $mod+shift+t exec konsole -e tmux
 
 #exec firefox #run firefox evertime at login
 
-exec_always feh --bg-scale ~/Pictures/backgrounds/6.png
+exec_always "/home/pooyan/dotfiles/scripts/dynamic_background.sh"
 
 gaps inner 10
 gaps outer 1
