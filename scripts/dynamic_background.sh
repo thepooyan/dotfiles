@@ -1,7 +1,22 @@
-back_loc="/home/pooyan/Pictures/backgrounds/"
+back_loc="/home/pooyan/Pictures/backgrounds"
+store="$back_loc/.current" 
+prev=$(cat $store)
+target="$prev"
 
-target=$(ls "$back_loc" | shuf -n 1)
+if [ ! -f $store ]; then
+  touch $store
+fi
 
-echo $target
+while [ "$target" = "$prev" ]
+do
+  target=$(ls "$back_loc" | shuf -n 1)
 
-feh --bg-scale "$back_loc$target"
+  echo from: $prev
+  echo to: $target
+
+
+  echo $target > $store
+
+done
+
+feh --bg-scale "$back_loc/$target"
