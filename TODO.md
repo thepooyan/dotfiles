@@ -9,5 +9,14 @@
 
 - pacman logs > filter successful ones
 
-- publish background to aur
-    - add auto complete to it
+# background
+- handle if prev dosen't exist
+- handle if store empty
+- add auto complete to it
+- set directory (init in zsh and set directory and alias?)
+- add help
+- add documentation
+- publish to git with curl
+
+- publish to aur
+
