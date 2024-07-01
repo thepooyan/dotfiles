@@ -193,7 +193,7 @@ bindsym $mod+shift+t exec konsole -e tmux
 
 #exec firefox #run firefox evertime at login
 
-exec_always "/home/pooyan/dotfiles/scripts/dynamic_background.sh"
+exec_always "/home/pooyan/dotfiles/scripts/background.sh random"
 
 gaps inner 10
 gaps outer 1
@@ -276,7 +276,7 @@ bindsym $mod+z mode "luncher"
 
 # command line
 mode "command" {
-  bindsym c exec "/home/pooyan/dotfiles/scripts/next_background.sh"; mode "default"
+  bindsym c exec "/home/pooyan/dotfiles/scripts/background.sh next"; mode "default"
   bindsym s exec "shutdown 0"; mode "default"
   bindsym r exec "reboot"; mode "default"
   bindsym l exec i3lock -c 000000; mode "default"
