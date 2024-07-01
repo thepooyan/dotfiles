@@ -276,7 +276,7 @@ bindsym $mod+z mode "luncher"
 
 # command line
 mode "command" {
-  bindsym c exec "/home/pooyan/dotfiles/scripts/dynamic_background.sh"; mode "default"
+  bindsym c exec "/home/pooyan/dotfiles/scripts/next_background.sh"; mode "default"
   bindsym s exec "shutdown 0"; mode "default"
   bindsym r exec "reboot"; mode "default"
   bindsym l exec i3lock -c 000000; mode "default"
