@@ -7,4 +7,7 @@
 - add fm command runner using rofi
 - add slide animations for matrix when using picom (maybe i should try hyperland first to see which one works best for this)
 
+- pacman logs > filter successful ones
 
+- publish background to aur
+    - add auto complete to it
