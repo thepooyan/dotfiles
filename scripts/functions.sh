@@ -46,7 +46,7 @@ clickdent() {
 }
 
 sendTo() {
-	sshpass -p "$(get_pass clickdent_pass)" scp -P 8022 $1 $(pass show clickdent_ip):/home/salmani
+  sshpass -p "$(get_pass clickdent_pass)" scp -P 8022 $1 $(pass show clickdent_ip):/home/salmani
 }
 
 viewClipboard() {
