@@ -1,4 +1,8 @@
-back_loc="/home/pooyan/Pictures/backgrounds"
+# Navigate the the scripts's directory
+script_dir=$(dirname "$(readlink -f "$0")")
+cd $script_dir
+
+back_loc="$(cat .conf/location)"
 store="$back_loc/.current" 
 prev=$(cat $store)
 target="$prev"
