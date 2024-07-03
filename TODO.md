@@ -12,7 +12,7 @@
 # background
 - handle if prev dosen't exist
 - handle if store empty
-- add auto complete to it
+- handle dependencies (feh)
 - set directory (init in zsh and set directory and alias?)
 - add help
 - add documentation
