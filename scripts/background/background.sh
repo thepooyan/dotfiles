@@ -45,7 +45,7 @@ background() {
 
   apply() {
     echo from: $prev
-    echo to: $target
+    echo to: \  $target
 
     echo $target > $store
     feh --bg-scale "$back_loc/$target"
