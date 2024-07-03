@@ -1,3 +1,4 @@
+#!/bin/bash
 background() {
   local script_dir="/home/pooyan/dotfiles/scripts/background"
   # Navigate the the scripts's directory
