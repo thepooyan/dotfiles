@@ -20,3 +20,6 @@
 
 - publish to aur
 
+
+# other
+- put logger in it's own directory

@@ -1,64 +1,71 @@
-# Navigate the the scripts's directory
-script_dir=$(dirname "$(readlink -f "$0")")
-cd $script_dir
+background() {
+  local script_dir="/home/pooyan/dotfiles/scripts/background"
+  # Navigate the the scripts's directory
+  cd $script_dir
 
-back_loc="$(cat .conf/location)"
-store="$back_loc/.current" 
-prev=$(cat $store)
-target="$prev"
+  back_loc="$(cat .conf/location)"
+  store="$back_loc/.current" 
+  prev=$(cat $store)
+  target="$prev"
 
-if [ ! -f $store ]; then
-  touch $store
-fi
+  if [ ! -f $store ]; then
+    touch $store
+  fi
 
+  next() {
+    f() {
+      ls -1 $back_loc
+      ls -1 $back_loc
+    }
 
-next() {
-  f() {
-    ls -1 $back_loc
-    ls -1 $back_loc
+    found=false
+    for i in $(f); do 
+      if [ "$found" = "true" ]; then
+        target="$i"
+        break
+      fi
+
+      if [ "$i" = "$prev" ]; then
+        found=true
+      fi
+    done
+
+    apply
   }
 
-  found=false
-  for i in $(f); do 
-    if [ "$found" = "true" ]; then
-      target="$i"
-      break
-    fi
+  random() {
 
-    if [ "$i" = "$prev" ]; then
-      found=true
-    fi
-  done
+    while [ "$target" = "$prev" ]
+    do
+      target=$(ls "$back_loc" | shuf -n 1)
+    done
 
-  apply
+    apply
+  }
+
+  apply() {
+    echo from: $prev
+    echo to: $target
+
+    echo $target > $store
+    feh --bg-scale "$back_loc/$target"
+  }
+
+  if [ -z "$1" ]; then
+    echo no args...
+    return
+  fi
+
+  if ! declare -F "$1" > /dev/null; then
+    echo what is $1 ? ://
+    return
+  fi
+
+  $1
 }
 
-random() {
+_background() { 
+  compadd next random 
+} 
 
-  while [ "$target" = "$prev" ]
-  do
-    target=$(ls "$back_loc" | shuf -n 1)
-  done
-
-  apply
-}
-
-apply() {
-  echo from: $prev
-  echo to: $target
-
-  echo $target > $store
-  feh --bg-scale "$back_loc/$target"
-}
-
-if [ -z "$1" ]; then
-  echo no args...
-  exit
-fi
-
-if ! declare -F "$1" > /dev/null; then
-  echo what is $1 ? ://
-  exit
-fi
-
-$1
+compdef _background background

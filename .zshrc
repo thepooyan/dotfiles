@@ -52,12 +52,12 @@ alias hibernate="systemctl hibernate"
 alias cat=bat
 alias ls=exa
 alias tree="eza --tree"
-alias logger="~/dotfiles/scripts/logger.sh"
-alias boot="~/dotfiles/scripts/boot.sh"
-alias background="~/dotfiles/scripts/background.sh"
 
 func="/home/pooyan/dotfiles/scripts/functions.sh"
 [ -f $func ] && source $func
+
+my_scripts="/home/pooyan/dotfiles/source_my_scripts.sh"
+[ -f $my_scripts ] && source $my_scripts
 
 set -o vi
 
