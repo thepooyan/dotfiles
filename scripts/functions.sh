@@ -1,5 +1,9 @@
 #!/bin/bash
 
+doc() {
+  zde Document
+}
+
 tod() {
   zde todo
 }
