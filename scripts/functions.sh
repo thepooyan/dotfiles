@@ -1,5 +1,9 @@
 #!/bin/bash
 
+dot() {
+  zde dot
+}
+
 min() {
   zde mini
 }
@@ -36,7 +40,8 @@ ide() {
 }
 
 zde() {
- cd $@ && nvim .
+ cd $@ 
+ nvim .
 }
 
 cc() {
