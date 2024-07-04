@@ -1,5 +1,9 @@
 #!/bin/bash
 
+tod() {
+  zde todo
+}
+
 vaults() {
   cd "/home/pooyan/0 Pooyan/Obsidian" 
   ar="$(ls | fzf)"
