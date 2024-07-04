@@ -131,6 +131,36 @@ local plugins = {
   --   "mg979/vim-visual-multi",
   --   lazy = false,
   -- }
+
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",
+    lazy = true,
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = {
+      workspaces = {
+        {
+          name = "Documentation",
+          path = "/home/pooyan/0 Pooyan/Obsidian/Documentation/",
+        },
+        {
+          name = "mini",
+          path = "/home/pooyan/0 Pooyan/Obsidian/mini/",
+        },
+        {
+          name = "Brain",
+          path = "/home/pooyan/0 Pooyan/Obsidian/Brain/",
+        },
+        {
+          name = "Thoughts",
+          path = "/home/pooyan/0 Pooyan/Obsidian/Thoughts",
+        },
+      },
+    },
+  }
 }
 
 return plugins
