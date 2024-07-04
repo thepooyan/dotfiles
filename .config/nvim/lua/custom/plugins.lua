@@ -66,6 +66,20 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
+  {
+    "nvimtools/none-ls.nvim",
+    event = "VeryLazy",
+    opts = function()
+      return require "custom.configs.null-ls"
+    end,
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    ft = {"javascript", "javascriptreact", "typescript", "typescriptreact"},
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
 
   -- To make a plugin not be loaded
   -- {
