@@ -1,5 +1,9 @@
 #!/bin/bash
 
+min() {
+  zde mini
+}
+
 doc() {
   zde Document
 }
