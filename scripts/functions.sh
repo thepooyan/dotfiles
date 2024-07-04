@@ -73,3 +73,11 @@ regenerate_spotify() {
   pass remove spoti
   pass generate -c spoti
 }
+
+zipall() {
+  for file in *; do
+    if [ -f "$file" ]; then
+      zip "${file}.zip" "$file"
+    fi
+  done
+}
