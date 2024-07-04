@@ -1,4 +1,15 @@
 #!/bin/bash
+
+vaults() {
+  cd "/home/pooyan/0 Pooyan/Obsidian" 
+  ar="$(ls | fzf)"
+  if [ ! -n "$ar" ]; then
+    echo what?
+    return
+  fi
+  cd $ar
+  vim .
+}
   
 get_pass() {
   pass show $1
