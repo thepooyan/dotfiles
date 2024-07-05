@@ -8,4 +8,4 @@ support multiple installs
 
 detect corrpt names in sync command
 
-
+detect system's editor

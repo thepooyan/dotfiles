@@ -125,6 +125,10 @@ sync() {
   install $list
 }
 
+edit() {
+  vim $permanent_log
+}
+
 if ! declare -F "$1" > /dev/null; then
   echo what is $1 ? ://
   exit
