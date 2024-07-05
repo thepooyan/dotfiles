@@ -13,7 +13,8 @@ doc() {
 }
 
 tod() {
-  zde todo
+  cd todo
+  vim TODO.md
 }
 
 vaults() {
