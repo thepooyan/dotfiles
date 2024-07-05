@@ -10,6 +10,21 @@ if [ ! -d "$logs_folder" ];then
   echo Creating folder $logs_folder 
 fi
 
+breakIfFailed() {
+  if [ ! $? -eq 0 ]; then
+    exit
+  fi
+}
+
+remove() {
+  sudo pacman -Rns $1
+
+  breakIfFailed
+
+  removeLog $1
+  echo Removed $1
+}
+
 install() {
   local temp=false
 
@@ -18,7 +33,7 @@ install() {
     shift
   fi
 
-  echo installing $@ ...
+  echo installing $1 ...
   echo
   sudo pacman -S $1
 
@@ -34,18 +49,21 @@ install() {
 }
 
 saveTemp() {
-  save $1  $temp_log
+  saveLog $1  $temp_log
 }
 
 savePermanent() {
-  save $1 $permanent_log
+  saveLog $1 $permanent_log
 }
 
-save() {
+saveLog() {
+  remove $1
+  echo $1 >> $2
+}
+
+removeLog() {
   sed -i '/\b'$1'\b/d' $temp_log
   sed -i '/\b'$1'\b/d' $permanent_log
-
-  echo $1 >> $2
 }
 
 if ! declare -F "$1" > /dev/null; then
