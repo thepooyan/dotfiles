@@ -158,6 +158,15 @@ local plugins = {
           name = "Thoughts",
           path = "/home/pooyan/0 Pooyan/Obsidian/Thoughts",
         },
+        {
+          name = "VHG",
+          path = "/home/pooyan/0 Pooyan/Obsidian/VGH/",
+        },
+        {
+          name = "NOTES",
+          path = "/home/pooyan/0 Pooyan/Obsidian/NOTES/",
+        },
+
       },
     },
   }

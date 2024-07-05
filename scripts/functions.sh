@@ -12,8 +12,8 @@ doc() {
   zde Document
 }
 
-tod() {
-  cd todo
+not() {
+  cd notes
   vim TODO.md
 }
 
