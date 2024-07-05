@@ -10,7 +10,14 @@ if [ ! -d "$logs_folder" ];then
 fi
 
 install() {
-  echo installing $1 ...
+  local temp=false
+
+  if [ $1 = "-t" ]; then
+    temp=true  
+    shift
+  fi
+
+  echo installing $@ ...
   echo
   sudo pacman -S $1
 
@@ -19,10 +26,16 @@ install() {
   fi
 
   savelog $1
+  if [ $temp != true ];then
+    savePermanent $1
+  fi
 }
 
 savelog() {
   echo $1 >> $main_log
+}
+
+savePermanent() {
   echo $1 >> $permanent_log
 }
 
@@ -31,4 +44,6 @@ if ! declare -F "$1" > /dev/null; then
   exit
 fi
 
-$1 $2
+command=$1
+shift
+$command $@
