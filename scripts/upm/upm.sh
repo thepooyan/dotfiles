@@ -87,6 +87,21 @@ clean() {
   remove $list
 }
 
+list() {
+ if [ "$1" = "permanent" ]; then
+   cat $permanent_log
+ fi
+ if [ "$1" = "temp" ]; then
+   cat $temp_log
+ fi
+ if [ "$1" = "all" ] || [ -z "$1" ]; then
+   while read l; do 
+     echo \(temp\) $l
+   done < $temp_log
+   cat $permanent_log
+ fi
+}
+
 if ! declare -F "$1" > /dev/null; then
   echo what is $1 ? ://
   exit
