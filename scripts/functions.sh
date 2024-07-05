@@ -14,7 +14,7 @@ doc() {
 
 not() {
   cd notes
-  vim TODO.md
+  vim Linux.md
 }
 
 vaults() {
