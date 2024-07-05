@@ -1,7 +1,8 @@
 #!/bin/bash
 
 logs_folder="/home/pooyan/.upm"
-main_log="$logs_folder/main_log.txt" 
+
+temp_log="$logs_folder/temp_log.txt" 
 permanent_log="$logs_folder/permanent_log.txt" 
 
 if [ ! -d "$logs_folder" ];then
@@ -25,18 +26,26 @@ install() {
     exit
   fi
 
-  savelog $1
-  if [ $temp != true ];then
+  if [ $temp = true ];then
+    saveTemp $1
+  else
     savePermanent $1
   fi
 }
 
-savelog() {
-  echo $1 >> $main_log
+saveTemp() {
+  save $1  $temp_log
 }
 
 savePermanent() {
-  echo $1 >> $permanent_log
+  save $1 $permanent_log
+}
+
+save() {
+  if grep $1 $2;then
+    return
+  fi
+  echo $1 >> $2
 }
 
 if ! declare -F "$1" > /dev/null; then
