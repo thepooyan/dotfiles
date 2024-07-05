@@ -6,4 +6,6 @@ so remove it from the other before adding it the one
 
 support multiple installs
 
+detect corrpt names in sync command
+
 

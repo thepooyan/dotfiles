@@ -10,6 +10,14 @@ if [ ! -d "$logs_folder" ];then
   echo Creating folder $logs_folder 
 fi
 
+commandExists() {
+  if command -v $1 &> /dev/null; then
+    echo 0
+  else
+    echo 1
+  fi
+}
+
 breakIfFailed() {
   if [ ! $? -eq 0 ]; then
     exit
@@ -88,22 +96,33 @@ clean() {
 }
 
 list() {
- if [ "$1" = "permanent" ]; then
-   cat $permanent_log
- fi
- if [ "$1" = "temp" ]; then
-   cat $temp_log
- fi
- if [ "$1" = "all" ] || [ -z "$1" ]; then
-   while read l; do 
-     echo \(temp\) $l
-   done < $temp_log
-   cat $permanent_log
- fi
+  if [ "$1" = "permanent" ]; then
+    cat $permanent_log
+  fi
+  if [ "$1" = "temp" ]; then
+    cat $temp_log
+  fi
+  if [ "$1" = "all" ] || [ -z "$1" ]; then
+    while read l; do 
+      echo \(temp\) $l
+    done < $temp_log
+    cat $permanent_log
+  fi
 }
 
 update() {
   sudo pacman -Syu
+}
+
+sync() {
+  echo installing these packages:
+  for i in $(cat $permanent_log); do 
+    echo - $i
+  done
+  echo
+  breakPrompt
+  list=$(tr '\n' ' ' < $permanent_log)
+  install $list
 }
 
 if ! declare -F "$1" > /dev/null; then
