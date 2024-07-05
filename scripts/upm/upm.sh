@@ -42,9 +42,9 @@ savePermanent() {
 }
 
 save() {
-  if grep $1 $2;then
-    return
-  fi
+  sed -i '/\b'$1'\b/d' $temp_log
+  sed -i '/\b'$1'\b/d' $permanent_log
+
   echo $1 >> $2
 }
 
