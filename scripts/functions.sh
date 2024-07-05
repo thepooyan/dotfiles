@@ -83,7 +83,15 @@ viewClipboard() {
 }
 
 watch() {
-  ls * | entr sh -cc "clear && ./$1"
+  if [ -f $1 ]; then 
+    if [ ! -x $1 ];then
+      echo making the file executable
+      chmod +x $1
+    fi
+    ls * | entr sh -cc "clear && ./$1"
+    return
+  fi
+  echo arg specified is not a file
 }
 
 generate_pacman_logs() {
