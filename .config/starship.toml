@@ -29,7 +29,6 @@ $lua\
 $python\
 $memory_usage\
 $sudo\
-$cmd_duration\
 $line_break\
 $jobs\
 $battery\
