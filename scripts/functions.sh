@@ -15,6 +15,15 @@ doc() {
 not() {
   cd notes
   vim Linux.md
+  git add .
+  git commit -m "$(date +"%D %a %r")"
+  git push origin master && {
+    echo
+      echo push successful!!
+    } || {
+      echo
+          echo push failed!!
+        }      
 }
 
 vaults() {
