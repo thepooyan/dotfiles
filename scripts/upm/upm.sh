@@ -16,6 +16,36 @@ breakIfFailed() {
   fi
 }
 
+saveTemp() {
+  saveLog $1  $temp_log
+}
+
+savePermanent() {
+  saveLog $1 $permanent_log
+}
+
+saveLog() {
+  removeLog $1
+  echo $1 >> $2
+}
+
+removeLog() {
+  sed -i '/\b'$1'\b/d' $temp_log
+  sed -i '/\b'$1'\b/d' $permanent_log
+}
+
+breakPrompt() {
+  while true; do
+    read -p "Do you want to proceed? (Y/n): " yn
+    yn=${yn:-y}
+    case $yn in
+      [Yy]* ) break;;
+      [Nn]* ) exit;;
+      * ) echo "Please answer yes or no.";;
+    esac
+  done
+}
+
 remove() {
   sudo pacman -Rns $1
 
@@ -37,9 +67,7 @@ install() {
   echo
   sudo pacman -S $1
 
-  if [ ! $? -eq 0 ]; then
-    exit
-  fi
+  breakIfFailed
 
   if [ $temp = true ];then
     saveTemp $1
@@ -48,22 +76,15 @@ install() {
   fi
 }
 
-saveTemp() {
-  saveLog $1  $temp_log
-}
-
-savePermanent() {
-  saveLog $1 $permanent_log
-}
-
-saveLog() {
-  remove $1
-  echo $1 >> $2
-}
-
-removeLog() {
-  sed -i '/\b'$1'\b/d' $temp_log
-  sed -i '/\b'$1'\b/d' $permanent_log
+clean() {
+  echo removing these packages:
+  for i in $(cat $temp_log); do 
+    echo - $i
+  done
+  echo
+  breakPrompt
+  list=$(tr '\n' ' ' < $temp_log)
+  remove $list
 }
 
 if ! declare -F "$1" > /dev/null; then
