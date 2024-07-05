@@ -52,6 +52,7 @@ alias hibernate="systemctl hibernate"
 alias cat=bat
 alias ls=exa
 alias tree="eza --tree"
+alias upm="/home/pooyan/dotfiles/scripts/upm/upm.sh"
 
 func="/home/pooyan/dotfiles/scripts/functions.sh"
 [ -f $func ] && source $func
