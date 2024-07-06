@@ -10,6 +10,7 @@
 - pacman logs > filter successful ones
 
 # background
+- turn it back to a script
 - handle if prev dosen't exist
 - handle if store empty
 - handle dependencies (feh)
