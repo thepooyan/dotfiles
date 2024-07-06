@@ -178,12 +178,12 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 exec --no-startup-id "/home/pooyan/.config/i3/record_workspace_stack.sh"
-exec --no-startup-id i3-battery-popup
 exec --no-startup-id picom
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always "source /home/pooyan/dotfiles/scripts/background/background.sh; background random"
 
 exec --no-startup-id "~/dotfiles/scripts/logger.sh ~/dotfiles/scripts/setup_monitors.sh"
 exec --no-startup-id "~/dotfiles/scripts/logger.sh ~/dotfiles/scripts/boot.sh"
 exec --no-startup-id i3-msg 'workspace 4; exec "kitty tmux new-session -A -s TODO nvim ~/0\ Pooyan/TODO/Board.md"'
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always "source /home/pooyan/dotfiles/scripts/background/background.sh; background random"
 exec i3-msg workspace 22
