@@ -173,10 +173,6 @@ mode "command" {
 }
 bindsym $mod+c mode "command"
 
-exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id nm-applet
-
 exec --no-startup-id "/home/pooyan/.config/i3/record_workspace_stack.sh"
 exec --no-startup-id picom
 
