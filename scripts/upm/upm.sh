@@ -50,6 +50,12 @@ removeLog() {
   sed -i '/\b'$1'\b/d' $permanent_log
 }
 
+removeLogs() {
+  for i in $@; do 
+    removeLog $i
+  done
+}
+
 breakPrompt() {
   while true; do
     read -p "Do you want to proceed? (Y/n): " yn
@@ -63,12 +69,12 @@ breakPrompt() {
 }
 
 remove() {
-  sudo pacman -Rns $1
+  sudo pacman -Rns $@
 
   breakIfFailed
 
-  removeLog $1
-  echo Removed $1
+  removeLogs $@
+  echo Removed $@
 }
 
 install() {
