@@ -1,13 +1,12 @@
-install -t folan
-install folan
-
-> files can only be in one log file at a time,
-so remove it from the other before adding it the one
-
-support multiple installs
+! install -t folan
+! install folan
+! files can only be in one log file at a time, so remove it from the other before adding it the one
+! support multiple installs
 
 detect corrpt names in sync command
 
 detect system's editor
 
 this wirted error that won't uninstall netcat with it's own name (makes clean not work)
+
+perfect each command one by one

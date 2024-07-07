@@ -111,16 +111,18 @@ clean() {
 
 list() {
   if [ "$1" = "permanent" ]; then
-    cat $permanent_log
+    bat $permanent_log
   fi
   if [ "$1" = "temp" ]; then
-    cat $temp_log
+    bat $temp_log
   fi
   if [ "$1" = "all" ] || [ -z "$1" ]; then
+    local tmp="$logs_folder/tmp"
     while read l; do 
-      echo \(temp\) $l
+      echo \(temp\) $l >> "$tmp"
     done < $temp_log
-    cat $permanent_log
+
+    bat "$tmp" $permanent_log
   fi
 }
 
