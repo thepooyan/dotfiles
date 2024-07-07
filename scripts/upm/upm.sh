@@ -25,16 +25,24 @@ breakIfFailed() {
 }
 
 saveTemp() {
-  saveLog $1  $temp_log
+  saveLog $temp_log "$@"
 }
 
 savePermanent() {
-  saveLog $1 $permanent_log
+  saveLog $permanent_log "$@"
 }
 
 saveLog() {
-  removeLog $1
-  echo $1 >> $2
+  local log=$1
+  shift
+  for i in $@; do 
+    saveSingleLog $log $i
+  done
+}
+
+saveSingleLog() {
+  removeLog $2
+  echo $2 >> $1
 }
 
 removeLog() {
@@ -71,16 +79,16 @@ install() {
     shift
   fi
 
-  echo installing $1 ...
+  echo installing $@ ...
   echo
-  sudo pacman -S $1
+  sudo pacman -S $@
 
   breakIfFailed
 
   if [ $temp = true ];then
-    saveTemp $1
+    saveTemp $@
   else
-    savePermanent $1
+    savePermanent $@
   fi
 }
 

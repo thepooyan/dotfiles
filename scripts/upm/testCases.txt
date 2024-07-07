@@ -9,3 +9,5 @@ support multiple installs
 detect corrpt names in sync command
 
 detect system's editor
+
+this wirted error that won't uninstall netcat with it's own name (makes clean not work)
