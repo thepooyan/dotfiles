@@ -161,7 +161,7 @@ mode "luncher" {
 bindsym $mod+z mode "luncher"
 
 mode "command" {
-  bindsym c exec "/home/pooyan/dotfiles/scripts/background/background.sh next"; mode "default"
+  bindsym c exec "source /home/pooyan/dotfiles/scripts/background/background.sh; background next"; mode "default"
   bindsym s exec "shutdown 0"; mode "default"
   bindsym r exec "reboot"; mode "default"
   bindsym l exec i3lock -c 000000; mode "default"
