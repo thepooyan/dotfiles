@@ -118,11 +118,15 @@ list() {
   fi
   if [ "$1" = "all" ] || [ -z "$1" ]; then
     local tmp="$logs_folder/tmp"
+    > $tmp
     while read l; do 
+      if [ -z "$l" ];then
+        break
+      fi
       echo \(temp\) $l >> "$tmp"
     done < $temp_log
 
-    bat "$tmp" $permanent_log
+    bat --file-name "Temp" $tmp --file-name "Permanent" $permanent_log
   fi
 }
 
