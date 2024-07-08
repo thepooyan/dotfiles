@@ -1,20 +1,20 @@
 #!/bin/bash
 
 remove() {
-  sudo pacman -Rns $@
+  names=$(pacman -Qq $@ 2>/dev/null)
 
-  if [ ! $? -eq 0 ]; then
-    retry_name=$(pacman -Qq $@)
-    echo did you mean $retry_name?
+  if [ -n "$names" ]; then
+    sudo pacman -Rns $names
+  else
+    echo Error! target not found: $@
+    exit
+  fi 
 
-    breakPrompt
+  breakIfFailed
 
-    remove $retry_name
-  fi
-
-  removeLogs $@
-  echo Removed $@
-  commit "Removed $@"
+  removeLogs $names
+  echo Removed $names
+  commit "Removed $names"
 }
 
 install() {
