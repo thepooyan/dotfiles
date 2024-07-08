@@ -99,3 +99,7 @@ sync() {
 edit() {
   vim $permanent_log
 }
+
+git() {
+  /usr/bin/git $@
+}
