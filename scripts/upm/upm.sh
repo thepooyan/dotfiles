@@ -7,17 +7,16 @@ permanent_log="$logs_folder/permanent_log.txt"
 
 if [ ! -d "$logs_folder" ];then
   mkdir $logs_folder
-  echo Creating folder $logs_folder 
-fi
-
-if [ ! -f "$permanent_log" ]; then
   touch $permanent_log
-  echo Creating $permanent_log
-fi
-
-if [ ! -f "$temp_log" ]; then
   touch $temp_log
+  echo Creating folder $logs_folder 
   echo Creating $temp_log
+  echo Creating $permanent_log
+  echo Welcome to upm!
+  pushd $logs_folder
+  git init
+  git add .
+  git commit -m "Initial commit"
 fi
 
 commandExists() {
