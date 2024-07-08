@@ -7,6 +7,7 @@ remove() {
 
   removeLogs $@
   echo Removed $@
+  commit "Removed $@"
 }
 
 install() {
