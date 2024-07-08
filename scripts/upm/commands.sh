@@ -99,18 +99,14 @@ sync() {
 edit() {
   vim $permanent_log
   echo
-  echo Saved successfully!
   echo changes:
   echo
 
   git diff --unified=0 --no-prefix | grep -E '^[+]\w' | echoin green
   git diff --unified=0 --no-prefix | grep -E '^[-]\w' | echoin red
 
-  echo
-
-  echo sync the changes?
-  prompt && {
-    sync
+  prompt "Save the changes?" && {
+    commit "Manual change"
     exit
   }
   git restore .

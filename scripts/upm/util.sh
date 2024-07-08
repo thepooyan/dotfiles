@@ -96,7 +96,7 @@ breakPrompt() {
 
 prompt() {
   while true; do
-    read -p "Do you want to proceed? (Y/n): " yn
+    read -p "$1 (Y/n): " yn
     yn=${yn:-y}
     case $yn in
       [Yy]* ) return 0;;
