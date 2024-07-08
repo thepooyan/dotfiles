@@ -136,6 +136,7 @@ list() {
     done < $temp_log
 
     bat --file-name "Temp" $tmp --file-name "Permanent" $permanent_log
+    rm $tmp
   fi
 }
 
