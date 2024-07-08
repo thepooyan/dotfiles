@@ -1,5 +1,16 @@
 #!/bin/bash
 
+commit() {
+  git add .
+
+  date="$(date +"%D %a %r")"
+  join=$(printf "%s, " "$@")
+  join=${join%, }
+  massage="[ $date ] - $join"
+
+  git commit -m "$massage"
+}
+
 commandExists() {
   if command -v $1 &> /dev/null; then
     echo 0

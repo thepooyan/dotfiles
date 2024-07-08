@@ -28,6 +28,8 @@ install() {
   else
     savePermanent $@
   fi
+
+  commit "Installed $@"
 }
 
 clean() {

@@ -14,11 +14,13 @@ if [ ! -d "$logs_folder" ];then
   echo Creating $temp_log
   echo Creating $permanent_log
   echo Welcome to upm!
-  pushd $logs_folder
+  cd $logs_folder
   git init
   git add .
   git commit -m "Initial commit"
 fi
+
+cd $logs_folder
 
 source "$script_folder/commands.sh"
 
