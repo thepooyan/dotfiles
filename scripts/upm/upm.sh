@@ -10,6 +10,16 @@ if [ ! -d "$logs_folder" ];then
   echo Creating folder $logs_folder 
 fi
 
+if [ ! -f "$permanent_log" ]; then
+  touch $permanent_log
+  echo Creating $permanent_log
+fi
+
+if [ ! -f "$temp_log" ]; then
+  touch $temp_log
+  echo Creating $temp_log
+fi
+
 commandExists() {
   if command -v $1 &> /dev/null; then
     echo 0
