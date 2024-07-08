@@ -1,3 +1,4 @@
+- move logs folder out of here
 - make a notification box (used for matrix and different modes)
     - add a response system for different modes and command mode feebbacks
     - matrix
