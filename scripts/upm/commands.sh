@@ -31,6 +31,8 @@ install() {
 
   breakIfFailed
 
+  saveGen $@
+
   if [ $temp = true ];then
     saveTemp $@
     commit "Temporarily installed $@"
@@ -97,7 +99,11 @@ sync() {
 }
 
 edit() {
-  vim $permanent_log
+  if [ "$1" == "temp" ];then
+    vim $temp_log
+  else
+    vim $permanent_log
+  fi
   echo
   echo changes:
   echo
@@ -136,6 +142,8 @@ init() {
   cd $logs_folder
   touch $permanent_log
   touch $temp_log
+  touch $gen_log
+  echo all_log.txt > .gitignore
   echo Creating folder $logs_folder 
   echo Creating $temp_log
   echo Creating $permanent_log

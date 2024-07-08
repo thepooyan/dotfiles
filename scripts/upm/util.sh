@@ -50,6 +50,10 @@ breakIfFailed() {
   fi
 }
 
+saveGen() {
+  saveLog $gen_log "$@"
+}
+
 saveTemp() {
   saveLog $temp_log "$@"
 }
@@ -74,6 +78,7 @@ saveSingleLog() {
 removeLog() {
   sed -i '/\b'$1'\b/d' $temp_log
   sed -i '/\b'$1'\b/d' $permanent_log
+  sed -i '/\b'$1'\b/d' $gen_log
 }
 
 removeLogs() {
