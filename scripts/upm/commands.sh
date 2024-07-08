@@ -100,9 +100,6 @@ edit() {
   vim $permanent_log
 }
 
-git() {
-  /usr/bin/git $@
-}
 
 restore() {
   if [ -d "$logs_folder" ];then
@@ -113,11 +110,16 @@ restore() {
     exit
   fi
 
-  echo cloning @1
+  mkdir ~/.upm
+  git clone $1 ~/.upm
+  if [ $? != "0" ]; then
+    rmdir ~/.upm
+  fi
 }
 
 init() {
   mkdir $logs_folder
+  cd $logs_folder
   touch $permanent_log
   touch $temp_log
   echo Creating folder $logs_folder 
@@ -129,3 +131,4 @@ init() {
   git add .
   git commit -m "Initial commit"
 }
+

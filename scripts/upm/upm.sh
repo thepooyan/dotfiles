@@ -18,6 +18,12 @@ fi
 
 source "$script_folder/commands.sh"
 
+if [ "$1" == "git" ]; then
+  shift
+  git $@
+  exit
+fi
+
 if ! declare -F "$1" > /dev/null; then
   echo what is $1 ? ://
   exit
