@@ -97,7 +97,18 @@ sync() {
 }
 
 edit() {
-  vim $permanent_log
+  cp $permanent_log tmp
+  vim tmp
+  echo
+  echo Saved successfully!
+  echo changes:
+  echo
+  # diff tmp $permanent_log | sed 's/</+/g' | sed 's/>/-/g' | grep '^[+-].*'
+  git diff
+  echo
+  echo run \"upm sync\" to install/remove changed packages and commit them.
+  echoin red folan
+  rm tmp
 }
 
 

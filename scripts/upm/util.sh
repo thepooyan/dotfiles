@@ -1,5 +1,30 @@
 #!/bin/bash
 
+echoin() {
+  declare -A colors
+  colors=(
+    ["red"]='\033[0;31m'
+    ["green"]='\033[0;32m'
+    ["yellow"]='\033[0;33m'
+    ["blue"]='\033[0;34m'
+    ["purple"]='\033[0;35m'
+    ["cyan"]='\033[0;36m'
+    ["white"]='\033[0;37m'
+    ["reset"]='\033[0m'
+  )
+
+  local color="$1"
+  local text="$2"
+  local color_code="${colors[$color]}"
+
+  if [[ -z "$color_code" ]]; then
+    echo "Color not recognized. Available colors: ${!colors[@]}"
+    return 1
+  fi
+
+  echo -e "${color_code}${text}${colors["reset"]}"
+}
+
 commit() {
   git add .
 

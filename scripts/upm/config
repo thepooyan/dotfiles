@@ -1,0 +1,6 @@
+auto-update = true | false
+auto-push = true | false
+
+auto-push-on = permanent | all
+
+editor = vim
