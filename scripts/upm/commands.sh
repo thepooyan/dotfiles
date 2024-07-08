@@ -70,7 +70,7 @@ list() {
       echo \(temp\) $l >> "$tmp"
     done < $temp_log
 
-    bat --file-name "Temp" $tmp --file-name "Permanent" $permanent_log
+    cat $tmp $permanent_log | bat --file-name "Packages"
     rm $tmp
   fi
 }
