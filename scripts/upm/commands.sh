@@ -3,7 +3,14 @@
 remove() {
   sudo pacman -Rns $@
 
-  breakIfFailed
+  if [ ! $? -eq 0 ]; then
+    retry_name=$(pacman -Qq $@)
+    echo did you mean $retry_name?
+
+    breakPrompt
+
+    remove $retry_name
+  fi
 
   removeLogs $@
   echo Removed $@
