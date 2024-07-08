@@ -26,11 +26,12 @@ install() {
 
   if [ $temp = true ];then
     saveTemp $@
+    commit "Temporarily installed $@"
   else
     savePermanent $@
+    commit "Installed $@"
   fi
 
-  commit "Installed $@"
 }
 
 clean() {
@@ -42,6 +43,7 @@ clean() {
   breakPrompt
   list=$(tr '\n' ' ' < $temp_log)
   remove $list
+  commit "Cleaned packages: $list"
 }
 
 list() {
