@@ -6,21 +6,15 @@ script_folder="/home/pooyan/dotfiles/scripts/upm"
 temp_log="$logs_folder/temp_log.txt" 
 permanent_log="$logs_folder/permanent_log.txt" 
 
-if [ ! -d "$logs_folder" ];then
-  mkdir $logs_folder
-  touch $permanent_log
-  touch $temp_log
-  echo Creating folder $logs_folder 
-  echo Creating $temp_log
-  echo Creating $permanent_log
-  echo Welcome to upm!
-  cd $logs_folder
-  git init
-  git add .
-  git commit -m "Initial commit"
+if [ ! -d "$logs_folder" ] && [ "$1" != "init" ] && [ "$1" != "restore" ];then
+  echo upm has not been initialized yet!
+  echo
+  echo run \"upm init\" to initialize a new repository,
+  echo ro run \"upm restore [your_git_repository_address]\" to restore your repo.
+  exit
 fi
 
-cd $logs_folder
+[ -d "$logs_folder" ] && cd $logs_folder
 
 source "$script_folder/commands.sh"
 

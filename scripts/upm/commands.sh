@@ -103,3 +103,29 @@ edit() {
 git() {
   /usr/bin/git $@
 }
+
+restore() {
+  if [ -d "$logs_folder" ];then
+    echo There is already a logs folder in this address:
+    echo $logs_folder
+    echo
+    echo Remove or rename it before trying to clone another one
+    exit
+  fi
+
+  echo cloning @1
+}
+
+init() {
+  mkdir $logs_folder
+  touch $permanent_log
+  touch $temp_log
+  echo Creating folder $logs_folder 
+  echo Creating $temp_log
+  echo Creating $permanent_log
+  echo Welcome to upm!
+  cd $logs_folder
+  git init
+  git add .
+  git commit -m "Initial commit"
+}
