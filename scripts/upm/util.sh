@@ -14,7 +14,7 @@ echoin() {
   )
 
   local color="$1"
-  local text="$2"
+  read text
   local color_code="${colors[$color]}"
 
   if [[ -z "$color_code" ]]; then
@@ -89,6 +89,18 @@ breakPrompt() {
     case $yn in
       [Yy]* ) break;;
       [Nn]* ) exit;;
+      * ) echo "Please answer yes or no.";;
+    esac
+  done
+}
+
+prompt() {
+  while true; do
+    read -p "Do you want to proceed? (Y/n): " yn
+    yn=${yn:-y}
+    case $yn in
+      [Yy]* ) return 0;;
+      [Nn]* ) return 1;;
       * ) echo "Please answer yes or no.";;
     esac
   done
