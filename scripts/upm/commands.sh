@@ -74,13 +74,19 @@ update() {
 
 sync() {
   echo installing these packages:
+  to_install=()
+
   for i in $(cat $permanent_log); do 
-    echo - $i
+    if ! pacman -Qq $i > /dev/null 2>&1; then
+      echo - $i
+      to_install+=("$i")
+    fi
   done
+  joined_string=$(IFS=" "; echo "${to_install[*]}")
+
   echo
   breakPrompt
-  list=$(tr '\n' ' ' < $permanent_log)
-  install $list
+  install $joined_string
 }
 
 edit() {
