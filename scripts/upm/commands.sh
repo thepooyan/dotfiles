@@ -83,7 +83,7 @@ update() {
 
 sync() {
   to_install=()
-  to_remove=""
+  to_remove=()
 
   echo removing these packages:
   echo
