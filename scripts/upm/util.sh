@@ -51,7 +51,9 @@ breakIfFailed() {
 }
 
 saveGen() {
-  saveLog $gen_log "$@"
+  for i in $@; do 
+    echo $i >> $gen_log
+  done
 }
 
 saveTemp() {

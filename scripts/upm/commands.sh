@@ -31,7 +31,6 @@ install() {
 
   breakIfFailed
 
-  saveGen $@
 
   if [ $temp = true ];then
     saveTemp $@
@@ -41,6 +40,7 @@ install() {
     commit "Installed $@"
   fi
 
+  saveGen $@
 }
 
 clean() {
