@@ -82,9 +82,23 @@ update() {
 }
 
 sync() {
-  echo installing these packages:
   to_install=()
+  to_remove=""
 
+  echo removing these packages:
+  echo
+
+  for l in $( diff $gen_log $permanent_log | grep "^<" | sed 's/< //g');do
+    echo - $l
+    to_remove+=("$l")
+  done
+
+  joined_remove=$(IFS=" "; echo "${to_remove[*]}")
+
+  echo
+
+  echo installing these packages:
+  echo
   for i in $(cat $permanent_log); do 
     if ! pacman -Qq $i > /dev/null 2>&1; then
       echo - $i
@@ -95,6 +109,8 @@ sync() {
 
   echo
   breakPrompt
+
+  remove $joined_remove
   install $joined_string
 }
 
