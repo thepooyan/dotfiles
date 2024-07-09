@@ -113,6 +113,8 @@ edit() {
 
   prompt "Save the changes?" && {
     commit "Manual change"
+    echo
+    echo run \"upm sync\" to apply the changes to your system
     exit
   }
   git restore .
