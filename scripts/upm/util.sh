@@ -1,9 +1,5 @@
 #!/bin/bash
 
-install_cmd() {
-  sudo pacman -S --noconfirm $@
-}
-
 echoin() {
   declare -A colors
   colors=(
