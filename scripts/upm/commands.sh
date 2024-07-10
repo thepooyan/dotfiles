@@ -4,7 +4,7 @@ remove() {
   names=$(pacman -Qq $@ 2>/dev/null)
 
   if [ -n "$names" ]; then
-    sudo pacman -Rns $names
+    sudo pacman -Rs $names
   else
     echo Error! target not found: $@
     exit
