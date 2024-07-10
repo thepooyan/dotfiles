@@ -1,25 +1,36 @@
 #!/bin/bash
 
-remove() {
-  flags=""
-  if [ "$1" = "--noconfirm" ];then
-    flags+="--noconfirm"
-    shift
-  fi
-  names=$(pacman -Qq $@ 2>/dev/null)
+init() {
+  mkdir $logs_folder
+  cd $logs_folder
+  touch $permanent_log
+  touch $temp_log
+  touch $gen_log
+  echo all_log.txt > .gitignore
+  echo Creating folder $logs_folder 
+  echo Creating $temp_log
+  echo Creating $permanent_log
+  echo Welcome to upm!
+  cd $logs_folder
+  git init
+  git add .
+  git commit -m "Initial commit"
+}
 
-  if [ -z "$names" ]; then
-    echo Error! target not found: $@
+restore() {
+  if [ -d "$logs_folder" ];then
+    echo There is already a logs folder in this address:
+    echo $logs_folder
+    echo
+    echo Remove or rename it before trying to clone another one
     exit
-  fi 
+  fi
 
-  sudo pacman -Rs $flags $names
-  breakIfFailed
-
-  removeLogs $@
-  removeLogs $names
-  echo Removed $@
-  commit "Removed $@"
+  mkdir ~/.upm
+  git clone $1 ~/.upm
+  if [ $? != "0" ]; then
+    rmdir ~/.upm
+  fi
 }
 
 install() {
@@ -76,6 +87,28 @@ install() {
   fi
 
   saveGen $@
+}
+
+remove() {
+  flags=""
+  if [ "$1" = "--noconfirm" ];then
+    flags+="--noconfirm"
+    shift
+  fi
+  names=$(pacman -Qq $@ 2>/dev/null)
+
+  if [ -z "$names" ]; then
+    echo Error! target not found: $@
+    exit
+  fi 
+
+  sudo pacman -Rs $flags $names
+  breakIfFailed
+
+  removeLogs $@
+  removeLogs $names
+  echo Removed $@
+  commit "Removed $@"
 }
 
 clean() {
@@ -184,40 +217,6 @@ edit() {
   else
     echo no changes detected...
   fi
-}
-
-
-restore() {
-  if [ -d "$logs_folder" ];then
-    echo There is already a logs folder in this address:
-    echo $logs_folder
-    echo
-    echo Remove or rename it before trying to clone another one
-    exit
-  fi
-
-  mkdir ~/.upm
-  git clone $1 ~/.upm
-  if [ $? != "0" ]; then
-    rmdir ~/.upm
-  fi
-}
-
-init() {
-  mkdir $logs_folder
-  cd $logs_folder
-  touch $permanent_log
-  touch $temp_log
-  touch $gen_log
-  echo all_log.txt > .gitignore
-  echo Creating folder $logs_folder 
-  echo Creating $temp_log
-  echo Creating $permanent_log
-  echo Welcome to upm!
-  cd $logs_folder
-  git init
-  git add .
-  git commit -m "Initial commit"
 }
 
 permanent() {
