@@ -25,11 +25,6 @@ install() {
   local temp=false
   local flags=""
 
-  if pacman -Qq $i > /dev/null 2>&1; then
-    echo already installed :/
-    exit
-  fi
-
   if [ $1 = "-t" ]; then
     temp=true  
     shift
@@ -38,6 +33,11 @@ install() {
   if [ $1 = "--noconfirm" ];then
     flags+="--noconfirm"
     shift
+  fi
+
+  if pacman -Qq $@ > /dev/null 2>&1; then
+    echo already installed :/
+    exit
   fi
 
   echo installing $@ ...
@@ -49,9 +49,9 @@ install() {
     if [ "$(yay -Ss $@)" != "" ];then
       echo found!
     else
-      echo not found
+      echo Target not found in yay repository either! :\(
+      exit
     fi
-    exit
   fi
 
 
