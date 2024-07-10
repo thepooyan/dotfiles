@@ -81,7 +81,7 @@ install() {
 clean() {
   echo removing these packages:
   for i in $(cat $temp_log); do 
-    echo - $i
+    echo - $i | echoin red
   done
   echo
   breakPrompt
