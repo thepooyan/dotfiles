@@ -141,13 +141,17 @@ sync() {
 }
 
 edit() {
+  local targetfile
   if [ "$1" == "temp" ];then
-    vim $temp_log
+    targetfile=$temp_log
   else
-    vim $permanent_log
+    targetfile=$permanent_log
   fi
 
+  vim $targetfile
+
   if [ "$(git diff --raw)" != "" ];then
+    checkforconflicts $targetfile
     echo committing the changes...
     commit "Manual change"
     echo

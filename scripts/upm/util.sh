@@ -1,5 +1,38 @@
 #!/bin/bash
 
+checkforconflicts() {
+  conflicts=$(grep -Fxf $temp_log $permanent_log)
+  if [ -z "$conflicts" ];then
+    return
+  fi
+
+  echo Error! | echoin red
+  echo these packages are listed both under permanent and temp: 
+  echo
+  for i in $conflicts; do
+    echo - $i | echoin red
+  done
+  echo
+  echo packages cannot be in both lists.
+  echo
+  echo \"upm temp [package name]\" | echoin blue
+  echo to move a package to the temp list
+  echo
+  echo \"upm permanent [package name]\" | echoin blue
+  echo to move a package to the permanent list
+  echo
+
+  press_any_key 
+  vim $1
+
+  checkforconflicts $1
+}
+
+press_any_key() {
+    echo ${1:-"Press any key to continue..."}
+    read -n 1 -s -r
+}
+
 echoin() {
   declare -A colors
   colors=(
