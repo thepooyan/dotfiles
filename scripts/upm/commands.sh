@@ -191,3 +191,18 @@ init() {
   git commit -m "Initial commit"
 }
 
+permanent() {
+  echo making packages permanent: $@
+  removeLogs $@
+  savePermanent $@
+  saveGen $@
+  commit "Switch package from temp to permanent: $@"
+}
+
+temp() {
+  echo making packages temp: $@
+  removeLogs $@
+  saveTemp $@
+  saveGen $@
+  commit "Switch package from temp to permanent: $@"
+}
