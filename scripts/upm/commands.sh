@@ -17,6 +17,7 @@ remove() {
   breakIfFailed
 
   removeLogs $@
+  removeLogs $names
   echo Removed $@
   commit "Removed $@"
 }
