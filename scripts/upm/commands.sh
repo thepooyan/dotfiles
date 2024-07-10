@@ -50,14 +50,15 @@ install() {
 
   if [ ! $? -eq 0 ]; then
     echo checking yay repository for $@... | echoin blue
-    if [ "$(yay -Ss $@)" != "" ];then
+    if find_in_aur $1;then
+      echo found the package above
       echo \| Warning!!! | echoin yellow
       echo \| beware you are installing this package via aur | echoin yellow
       echo \| not all of the aur packages are safe | echoin yellow
       echo \| continue with at your risk | echoin yellow
+
       yay -S $@
       breakIfFailed
-      echo conti
     else
       echo Target not found in yay repository either! :\(
       exit
