@@ -23,15 +23,21 @@ remove() {
 
 install() {
   local temp=false
+  local flags=""
 
   if [ $1 = "-t" ]; then
     temp=true  
     shift
   fi
 
+  if [ $1 = "--noconfirm" ];then
+    flags+="--noconfirm"
+    shift
+  fi
+
   echo installing $@ ...
   echo
-  sudo pacman -S $@
+  sudo pacman -S $flags $@
 
   breakIfFailed
 
@@ -100,21 +106,28 @@ sync() {
   echo
 
   to_install=()
+  to_install_tmp=()
   for i in $(cat $permanent_log); do 
     if ! pacman -Qq $i > /dev/null 2>&1; then
       to_install+=("$i")
     fi
   done
 
-  if [ -n "$to_install" ];then
+  for i in $(cat $temp_log); do 
+    if ! pacman -Qq $i > /dev/null 2>&1; then
+      to_install_tmp+=("$i")
+    fi
+  done
+
+  if [ -n "$to_install" ] || [ -n "$to_install_tmp" ];then
     echo installing these packages:
     echo
-    for i in $to_install; do 
+    for i in $to_install $to_install_tmp; do 
       echo - $i | echoin green
     done
   fi
 
-  if [ -z "$to_install" ] && [ -z "$to_remove" ];then
+  if [ -z "$to_install_tmp" ] && [ -z "$to_install" ] && [ -z "$to_remove" ];then
     echo already up to date!
     exit
   fi
@@ -123,7 +136,8 @@ sync() {
   breakPrompt
 
   [ -n "$to_remove" ] && remove --noconfirm $to_remove
-  [ -n "$to_install" ] && install_cmd --noconfirm $to_install
+  [ -n "$to_install" ] && install --noconfirm $to_install
+  [ -n "$to_install_tmp" ] && install -t --noconfirm $to_install_tmp
 }
 
 edit() {
