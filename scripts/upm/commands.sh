@@ -92,7 +92,7 @@ update() {
 }
 
 sync() {
-  to_remove=$(diff $gen_log $permanent_log | grep "^<" | sed 's/< //g')
+  to_remove=$(diff $gen_log <(cat $permanent_log $temp_log) | grep "^<" | sed 's/< //g')
 
   if [ -n "$to_remove" ];then
     echo removing these packages:
