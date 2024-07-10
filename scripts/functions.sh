@@ -1,5 +1,12 @@
 #!/bin/bash
 
+run() {
+  if [ ! -x $1 ];then
+    chmod +x $1
+  fi
+  ./$1
+}
+
 dot() {
   zde dot
 }
