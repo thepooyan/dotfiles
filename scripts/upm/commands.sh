@@ -121,55 +121,48 @@ edit() {
   else
     vim $permanent_log
   fi
-  echo
-  echo changes:
-  echo
 
-  git diff --unified=0 --no-prefix | grep -E '^[+]\w' | echoin green
-  git diff --unified=0 --no-prefix | grep -E '^[-]\w' | echoin red
-
-  prompt "Save the changes?" && {
+  if [ "$(git diff --raw)" != "" ];then
+    echo committing the changes...
     commit "Manual change"
-      echo
-      echo run \"upm sync\" to apply the changes to your system
-      exit
-    }
-    git restore .
-    echo 
-    echo restoring the changes...
-  }
+    echo
+    echo run \"upm sync\" to apply the changes to your system
+  else
+    echo no changes detected...
+  fi
+}
 
 
-  restore() {
-    if [ -d "$logs_folder" ];then
-      echo There is already a logs folder in this address:
-      echo $logs_folder
-      echo
-      echo Remove or rename it before trying to clone another one
-      exit
-    fi
+restore() {
+  if [ -d "$logs_folder" ];then
+    echo There is already a logs folder in this address:
+    echo $logs_folder
+    echo
+    echo Remove or rename it before trying to clone another one
+    exit
+  fi
 
-    mkdir ~/.upm
-    git clone $1 ~/.upm
-    if [ $? != "0" ]; then
-      rmdir ~/.upm
-    fi
-  }
+  mkdir ~/.upm
+  git clone $1 ~/.upm
+  if [ $? != "0" ]; then
+    rmdir ~/.upm
+  fi
+}
 
-  init() {
-    mkdir $logs_folder
-    cd $logs_folder
-    touch $permanent_log
-    touch $temp_log
-    touch $gen_log
-    echo all_log.txt > .gitignore
-    echo Creating folder $logs_folder 
-    echo Creating $temp_log
-    echo Creating $permanent_log
-    echo Welcome to upm!
-    cd $logs_folder
-    git init
-    git add .
-    git commit -m "Initial commit"
-  }
+init() {
+  mkdir $logs_folder
+  cd $logs_folder
+  touch $permanent_log
+  touch $temp_log
+  touch $gen_log
+  echo all_log.txt > .gitignore
+  echo Creating folder $logs_folder 
+  echo Creating $temp_log
+  echo Creating $permanent_log
+  echo Welcome to upm!
+  cd $logs_folder
+  git init
+  git add .
+  git commit -m "Initial commit"
+}
 
