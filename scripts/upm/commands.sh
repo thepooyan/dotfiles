@@ -25,6 +25,11 @@ install() {
   local temp=false
   local flags=""
 
+  if pacman -Qq $i > /dev/null 2>&1; then
+    echo already installed :/
+    exit
+  fi
+
   if [ $1 = "-t" ]; then
     temp=true  
     shift
@@ -39,7 +44,15 @@ install() {
   echo
   sudo pacman -S $flags $@
 
-  breakIfFailed
+  if [ ! $? -eq 0 ]; then
+    echo checking yay repository for $@... | echoin blue
+    if [ "$(yay -Ss $@)" != "" ];then
+      echo found!
+    else
+      echo not found
+    fi
+    exit
+  fi
 
 
   if [ $temp = true ];then
