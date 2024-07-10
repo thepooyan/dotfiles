@@ -32,6 +32,4 @@ fi
 
 source "$script_folder/util.sh"
 
-command=$1
-shift
-$command $@
+$@
