@@ -1,20 +1,13 @@
 #!/bin/bash
 
 remove() {
-  names=$(pacman -Qq $@ 2>/dev/null)
-
-  if [ -n "$names" ]; then
-    sudo pacman -Rs $names
-  else
-    echo Error! target not found: $@
-    exit
-  fi 
+  remove_cmd $@
 
   breakIfFailed
 
-  removeLogs $names
-  echo Removed $names
-  commit "Removed $names"
+  removeLogs $@
+  echo Removed $@
+  commit "Removed $@"
 }
 
 install() {
@@ -118,8 +111,8 @@ sync() {
   echo
   breakPrompt
 
-  remove $joined_remove
-  install $joined_string
+  [ -n "$to_remove" ] && remove_cmd --noconfirm $to_remove
+  [ -n "$to_install" ] && install_cmd --noconfirm $to_install
 }
 
 edit() {
