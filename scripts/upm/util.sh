@@ -1,5 +1,14 @@
 #!/bin/bash
 
+package_installed_msg() {
+  echo This pakcage is already installed.
+  echo
+  echo if you wish to add a package that\'s already installed to your lists, try using these commands:
+  echo
+  echo \"upm permanent [package]\" | echoin blue
+  echo \"upm temp [package]\" | echoin blue
+}
+
 find_in_aur() {
   yay -Ss $1 | grep "aur/$1 "
 }
@@ -37,8 +46,8 @@ package_installed() {
 }
 
 press_any_key() {
-    echo ${1:-"Press any key to continue..."}
-    read -n 1 -s -r
+  echo ${1:-"Press any key to continue..."}
+  read -n 1 -s -r
 }
 
 echoin() {

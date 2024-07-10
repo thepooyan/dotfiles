@@ -32,4 +32,5 @@ fi
 
 source "$script_folder/util.sh"
 
+echo
 $@

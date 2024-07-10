@@ -48,11 +48,7 @@ install() {
   fi
 
   if package_installed $@; then
-    echo This pakcage is already installed.
-    echo
-    echo if you wish to add a package that\'s already installed to your lists, try using these commands:
-    echo \"upm permanent [package]\" | echoin blue
-    echo \"upm temp [package]\" | echoin blue
+    package_installed_msg
     exit
   fi
 
