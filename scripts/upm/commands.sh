@@ -35,8 +35,12 @@ install() {
     shift
   fi
 
-  if pacman -Qq $@ > /dev/null 2>&1; then
-    echo already installed :/
+  if package_installed $@; then
+    echo This pakcage is already installed.
+    echo
+    echo if you wish to add a package that\'s already installed to your lists, try using these commands:
+    echo \"upm permanent [package]\" | echoin blue
+    echo \"upm temp [package]\" | echoin blue
     exit
   fi
 
@@ -215,17 +219,25 @@ init() {
 }
 
 permanent() {
-  echo making packages permanent: $@
+  if ! package_installed $@; then
+    echo package not found: $@
+    exit
+  fi
+  echo Add package\(s\) to permanent: $@
   removeLogs $@
   savePermanent $@
   saveGen $@
-  commit "Switch package from temp to permanent: $@"
+  commit "Add package(s) to permanent: $@"
 }
 
 temp() {
-  echo making packages temp: $@
+  if ! package_installed $@; then
+    echo package not found: $@
+    exit
+  fi
+  echo Add package\(s\) to temp: $@
   removeLogs $@
   saveTemp $@
   saveGen $@
-  commit "Switch package from temp to permanent: $@"
+  commit "Add package(s) to temp: $@"
 }

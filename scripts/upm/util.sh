@@ -28,6 +28,10 @@ checkforconflicts() {
   checkforconflicts $1
 }
 
+package_installed() {
+  pacman -Qq $@ > /dev/null 2>&1
+}
+
 press_any_key() {
     echo ${1:-"Press any key to continue..."}
     read -n 1 -s -r
