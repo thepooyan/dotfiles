@@ -4,22 +4,6 @@ install_cmd() {
   sudo pacman -S --noconfirm $@
 }
 
-remove_cmd() {
-  flags=""
-  if [ "$1" = "--noconfirm" ];then
-    flags+="--noconfirm"
-    shift
-  fi
-  names=$(pacman -Qq $@ 2>/dev/null)
-
-  if [ -n "$names" ]; then
-    sudo pacman -Rs $flags $names
-  else
-    echo Error! target not found: $@
-    exit
-  fi 
-}
-
 echoin() {
   declare -A colors
   colors=(

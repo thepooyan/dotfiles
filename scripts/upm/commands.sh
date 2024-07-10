@@ -1,8 +1,19 @@
 #!/bin/bash
 
 remove() {
-  remove_cmd $@
+  flags=""
+  if [ "$1" = "--noconfirm" ];then
+    flags+="--noconfirm"
+    shift
+  fi
+  names=$(pacman -Qq $@ 2>/dev/null)
 
+  if [ -z "$names" ]; then
+    echo Error! target not found: $@
+    exit
+  fi 
+
+  sudo pacman -Rs $flags $names
   breakIfFailed
 
   removeLogs $@
@@ -111,7 +122,7 @@ sync() {
   echo
   breakPrompt
 
-  [ -n "$to_remove" ] && remove_cmd --noconfirm $to_remove
+  [ -n "$to_remove" ] && remove --noconfirm $to_remove
   [ -n "$to_install" ] && install_cmd --noconfirm $to_install
 }
 
