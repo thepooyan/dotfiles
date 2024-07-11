@@ -52,12 +52,29 @@ install() {
     exit
   fi
 
-  echo installing $@ ...
-  echo
-  sudo pacman -S $flags $@
+  for i in $@;do
+    echo searching for $i ...
+    echo
 
-  if [ ! $? -eq 0 ]; then
-    echo checking yay repository for $@... | echoin blue
+    if find_in_official $i;then
+      sudo pacman -S $flags $@
+      breakIfFailed
+
+      if [ $temp = true ];then
+        saveTemp $@
+        commit "Temporarily installed $@"
+      else
+        savePermanent $@
+        commit "Installed $@"
+      fi
+
+      saveGen $@
+      exit
+    fi
+
+    echo package not found in regular repositories!
+    echo seaching yay repository for $i ... | echoin blue
+
     if find_in_aur $1;then
       echo found the package above
       echo \| Warning!!! | echoin yellow
@@ -67,22 +84,24 @@ install() {
 
       yay -S $@
       breakIfFailed
+
+      if [ $temp = true ];then
+        saveTemp $@
+        commit "Temporarily installed $@"
+      else
+        savePermanent $@
+        commit "Installed $@"
+      fi
+
+      saveGen $@
+      exit
     else
       echo Target not found in yay repository either! :\(
       exit
     fi
-  fi
+  done
 
 
-  if [ $temp = true ];then
-    saveTemp $@
-    commit "Temporarily installed $@"
-  else
-    savePermanent $@
-    commit "Installed $@"
-  fi
-
-  saveGen $@
 }
 
 remove() {

@@ -13,6 +13,10 @@ find_in_aur() {
   yay -Ss $1 | grep "aur/$1 "
 }
 
+find_in_official() {
+  pacman -Ss $1 | grep ".*/$1 "
+}
+
 checkforconflicts() {
   conflicts=$(grep -Fxf $temp_log $permanent_log)
   if [ -z "$conflicts" ];then
