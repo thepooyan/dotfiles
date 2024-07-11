@@ -11,7 +11,7 @@ dot() {
   zde dot
 }
 
-min() {
+mini() {
   zde mini
 }
 

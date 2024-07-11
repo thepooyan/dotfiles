@@ -102,7 +102,9 @@ breakIfFailed() {
 
 saveGen() {
   for i in $@; do 
-    echo $i >> $gen_log
+    if ! grep "$i" $gen_log > /dev/null;then
+      echo $i >> $gen_log
+    fi
   done
 }
 
