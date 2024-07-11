@@ -162,21 +162,25 @@ sync() {
   to_install=()
   to_install_tmp=()
   for i in $(cat $permanent_log); do 
-    if ! pacman -Qq $i > /dev/null 2>&1; then
+    if ! package_installed $i;then
       to_install+=("$i")
+    else
+      saveGen $i
     fi
   done
 
   for i in $(cat $temp_log); do 
-    if ! pacman -Qq $i > /dev/null 2>&1; then
+    if ! package_installed $i; then
       to_install_tmp+=("$i")
+    else
+      saveGen $i
     fi
   done
 
   if [ -n "$to_install" ] || [ -n "$to_install_tmp" ];then
     echo installing these packages:
     echo
-    for i in $to_install $to_install_tmp; do 
+    for i in ${to_install[*]} ${to_install_tmp[*]}; do 
       echo - $i | echoin green
     done
   fi
@@ -189,9 +193,9 @@ sync() {
   echo
   breakPrompt
 
-  [ -n "$to_remove" ] && remove --noconfirm $to_remove
-  [ -n "$to_install" ] && install --noconfirm $to_install
-  [ -n "$to_install_tmp" ] && install -t --noconfirm $to_install_tmp
+  [ -n "$to_remove" ] && remove --noconfirm ${to_remove[*]}
+  [ -n "$to_install" ] && install --noconfirm ${to_install[*]}
+  [ -n "$to_install_tmp" ] && install -t --noconfirm ${to_install_tmp[*]}
 }
 
 edit() {
