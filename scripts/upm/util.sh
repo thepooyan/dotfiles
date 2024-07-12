@@ -23,13 +23,13 @@ find_in_official() {
   fi
 
   if [ "$count" == "1" ];then
-    echo $result
+    echo $result | sed 's/^.*\///'
   else
     level2=$(echo "$result" | grep ".*/$1")
     if [ "$(echo $level2 | wc -w)" == "1" ];then
-      echo $level2
+      echo $level2 | sed 's/^.*\///'
     else
-      echo "$result" | fzf
+      echo "$result" | fzf | sed 's/^.*\///'
     fi
   fi
 }
