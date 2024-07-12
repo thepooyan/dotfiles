@@ -20,8 +20,12 @@ fi
 source "$script_folder/commands.sh"
 
 if [ "$1" == "git" ]; then
-  shift
-  git $@
+  $@
+  echo 
+  echo It is recommended to run
+  echo    \"upm sync\"
+  echo after EVERY manual change to the repository,
+  echo so that upm\'s inner log get\'s updated with the latest changes
   exit
 fi
 
