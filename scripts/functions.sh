@@ -107,7 +107,12 @@ watch() {
     ls * | entr sh -cc "clear && ./$1"
     return
   fi
-  echo arg specified is not a file
+  if command -v $1 &> /dev/null;then
+    args=$@
+    ls * | entr sh -cc "clear;$args"
+    return
+  fi
+  echo arg specified is neither a file or a command
 }
 
 generate_pacman_logs() {
