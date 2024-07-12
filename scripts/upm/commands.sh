@@ -63,11 +63,11 @@ install() {
       breakIfFailed
 
       if [ $temp = true ];then
-        saveTemp $ans
-        commit "Temporarily installed $ans"
+        saveTemp $i
+        commit "Temporarily installed $i"
       else
-        savePermanent $ans
-        commit "Installed $ans"
+        savePermanent $i
+        commit "Installed $i"
       fi
 
       saveGen $@
