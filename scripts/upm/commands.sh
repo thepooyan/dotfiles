@@ -263,3 +263,9 @@ temp() {
   saveGen $@
   commit "Add package(s) to temp: $@"
 }
+
+search() {
+  echo searching for $1 ...
+  pacman -Ss $1
+  yay -Ss $1
+}
