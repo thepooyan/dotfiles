@@ -14,7 +14,24 @@ find_in_aur() {
 }
 
 find_in_official() {
-  pacman -Ss $1 | grep ".*/$1 "
+  result=$(pkgfile -s "$1")
+  count=$(echo $result | wc -w)
+
+  if [ -z "$result" ];then
+    echo no match found for \"$i\" in regular repositories
+    exit 1
+  fi
+
+  if [ "$count" == "1" ];then
+    echo $result
+  else
+    level2=$(echo "$result" | grep ".*/$1")
+    if [ "$(echo $level2 | wc -w)" == "1" ];then
+      echo $level2
+    else
+      echo "$result" | fzf
+    fi
+  fi
 }
 
 checkforconflicts() {

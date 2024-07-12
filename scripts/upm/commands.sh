@@ -56,8 +56,10 @@ install() {
     echo searching for $i ...
     echo
 
-    if find_in_official $i;then
-      sudo pacman -S $flags $@
+    ans=$(find_in_official $i)
+
+    if [ "$?" == "0" ];then
+      sudo pacman -S $flags $ans
       breakIfFailed
 
       if [ $temp = true ];then
