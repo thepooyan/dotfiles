@@ -1,5 +1,24 @@
 #!/bin/bash
 
+theme() {
+  pic="/home/pooyan/dotfiles/.config/picom/picom.conf"
+
+  apply() {
+    sed '/tmux/c\  "'$1':name *= '\''tmux'\'' && focused"' $pic
+    sed '/^blur-strength.*/c\blur-strength = '$2';' $pic
+  }
+
+  op() {
+    apply 10 11
+  }
+
+  normal() {
+    apply 10 12
+  }
+
+  $1
+}
+
 run() {
   if [ ! -x $1 ];then
     chmod +x $1
