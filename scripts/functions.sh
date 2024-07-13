@@ -1,24 +1,5 @@
 #!/bin/bash
 
-theme() {
-  pic="/home/pooyan/dotfiles/.config/picom/picom.conf"
-
-  apply() {
-    sed '/tmux/c\  "'$1':name *= '\''tmux'\'' && focused"' $pic
-    sed '/^blur-strength.*/c\blur-strength = '$2';' $pic
-  }
-
-  op() {
-    apply 10 11
-  }
-
-  normal() {
-    apply 10 12
-  }
-
-  $1
-}
-
 run() {
   if [ ! -x $1 ];then
     chmod +x $1
@@ -50,111 +31,111 @@ not() {
       echo
           echo push failed!!
         }      
-}
+      }
 
-vaults() {
-  cd "/home/pooyan/0 Pooyan/Obsidian" 
-  ar="$(ls | fzf)"
-  if [ ! -n "$ar" ]; then
-    echo what?
-    return
-  fi
-  cd $ar
-  vim .
-}
-  
-get_pass() {
-  pass show $1
-}
+      vaults() {
+        cd "/home/pooyan/0 Pooyan/Obsidian" 
+        ar="$(ls | fzf)"
+        if [ ! -n "$ar" ]; then
+          echo what?
+          return
+        fi
+        cd $ar
+        vim .
+      }
 
-vim() {
-	nvim "$1"
-}
+      get_pass() {
+        pass show $1
+      }
 
-ide() {
-	cc && nvim .
-}
+      vim() {
+        nvim "$1"
+      }
 
-zde() {
- cd $@ 
- nvim .
-}
+      ide() {
+        cc && nvim .
+      }
 
-cc() {
-	cd "$(fuzzyFindFolder)"
-}
+      zde() {
+        cd $@ 
+        nvim .
+      }
 
-fuzzyFindFolder() {
-	find . -type d | fzf
-}
+      cc() {
+        cd "$(fuzzyFindFolder)"
+      }
 
-nekoray() {
-  get_pass pass | sudo -S ~/appImages/nekoray/nekoray-3.19-2023-08-30-linux-x64.AppImage
-}
+      fuzzyFindFolder() {
+        find . -type d | fzf
+      }
 
-obsidian() {
-  ~/appImages/Obsidian/Obsidian-1.5.3.AppImage
-}
+      nekoray() {
+        get_pass pass | sudo -S ~/appImages/nekoray/nekoray-3.19-2023-08-30-linux-x64.AppImage
+      }
 
-clipboard() {
-  [ ! -z "$1" ] && {
-    echo "$@" | xclip -selection clipboard
-  } || {
-    read -r input
-    echo "$input" | xclip -selection clipboard
-  }
-}
+      obsidian() {
+        ~/appImages/Obsidian/Obsidian-1.5.3.AppImage
+      }
 
-clickdent() {
-  sshpass -p $(get_pass clickdent_pass) ssh -p 8022 $(get_pass clickdent_ip)
-}
+      clipboard() {
+        [ ! -z "$1" ] && {
+          echo "$@" | xclip -selection clipboard
+        } || {
+          read -r input
+                  echo "$input" | xclip -selection clipboard
+                }
+              }
 
-sendTo() {
-  sshpass -p "$(get_pass clickdent_pass)" scp -P 8022 $1 $(pass show clickdent_ip):/home/salmani
-}
+              clickdent() {
+                sshpass -p $(get_pass clickdent_pass) ssh -p 8022 $(get_pass clickdent_ip)
+              }
 
-viewClipboard() {
-  xclip -o -sel clip
-}
+              sendTo() {
+                sshpass -p "$(get_pass clickdent_pass)" scp -P 8022 $1 $(pass show clickdent_ip):/home/salmani
+              }
 
-watch() {
-  if [ -f $1 ]; then 
-    if [ ! -x $1 ];then
-      echo making the file executable
-      chmod +x $1
-    fi
-    ls * | entr sh -cc "clear && ./$1"
-    return
-  fi
-  if command -v $1 &> /dev/null;then
-    args=$@
-    ls * | entr sh -cc "clear;$args"
-    return
-  fi
-  echo arg specified is neither a file or a command
-}
+              viewClipboard() {
+                xclip -o -sel clip
+              }
 
-generate_pacman_logs() {
-  grep "pacman -S [a-zA-Z].*" /var/log/pacman.log | awk -F"'" '{print $2}' | awk '!seen[$0]++' | tac | cat
-}
+              watch() {
+                if [ -f $1 ]; then 
+                  if [ ! -x $1 ];then
+                    echo making the file executable
+                    chmod +x $1
+                  fi
+                  ls * | entr sh -cc "clear && ./$1"
+                  return
+                fi
+                if command -v $1 &> /dev/null;then
+                  args=$@
+                  ls * | entr sh -cc "clear;$args"
+                  return
+                fi
+                echo arg specified is neither a file or a command
+              }
 
-fm() {
-  if [ $1 ]; then
-    $FILE_MNGR $1&
-  else
-    $FILE_MNGR "$(fuzzyFindFolder)"
-  fi
-}
+              generate_pacman_logs() {
+                grep "pacman -S [a-zA-Z].*" /var/log/pacman.log | awk -F"'" '{print $2}' | awk '!seen[$0]++' | tac | cat
+              }
 
-regenerate_spotify() {
-  pass remove spoti
-  pass generate -c spoti
-}
+              fm() {
+                if [ $1 ]; then
+                  $FILE_MNGR $1&
+                else
+                  $FILE_MNGR "$(fuzzyFindFolder)"
+                fi
+              }
 
-zipall() {
-  for file in *; do
-    if [ -f "$file" ]; then
-      zip "${file}.zip" "$file"
-    fi
-  done
-}
+              regenerate_spotify() {
+                pass remove spoti
+                pass generate -c spoti
+              }
+
+              zipall() {
+                for file in *; do
+                  if [ -f "$file" ]; then
+                    zip "${file}.zip" "$file"
+                  fi
+                done
+              }
