@@ -11,6 +11,10 @@ dot() {
   zde dot
 }
 
+arti() {
+  zde arti
+}
+
 mini() {
   zde mini
 }
