@@ -12,9 +12,17 @@ normal() {
   apply 90 7.5
 }
 
+classy() {
+  apply 85 7
+}
+
+see_through() {
+  apply 80 4
+}
+
 if ! command -v $1 &> /dev/null;then
   echo $1 not defined...
-  return
+  exit
 fi
 
 apply() {
