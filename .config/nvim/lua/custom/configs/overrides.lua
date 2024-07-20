@@ -38,6 +38,7 @@ M.mason = {
     -- "clangd",
     -- "clang-format",
     "tailwind-languege-server",
+    "emmet-ls",
 
     "eslint-lsp",
     "prettierd",
