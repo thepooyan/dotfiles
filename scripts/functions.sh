@@ -1,5 +1,10 @@
 #!/bin/bash
 
+pooyan() {
+  nmcli dev wifi rescan
+  nmcli dev wifi connect pooyan password $(pass show wifi/pooyan)
+}
+
 in() {
   declare -A colors
   colors=(
