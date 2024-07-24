@@ -28,6 +28,7 @@
   k @k
   l @l
   ; @;
+  ret ; 
 )
 
 (deflayer arrows _    down  up  right left )
