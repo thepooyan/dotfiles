@@ -1,0 +1,8 @@
+(defsrc
+  caps j k l h
+)
+(defalias
+  mcaps (tap-hold 150 150 esc (layer-while-held arrows))
+)
+(deflayer base   @mcaps   j    k    l    h)
+(deflayer arrows _    down  up  right left)

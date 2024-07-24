@@ -180,6 +180,7 @@ exec --no-startup-id picom
 
 exec --no-startup-id "~/dotfiles/scripts/logger.sh ~/dotfiles/scripts/setup_monitors.sh"
 exec --no-startup-id "~/dotfiles/scripts/logger.sh ~/dotfiles/scripts/boot.sh"
+exec --no-startup-id "pass show pass | sudo -S kanata -c /home/pooyan/.config/kanata/kanata.kdb"
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always "source /home/pooyan/dotfiles/scripts/background/background.sh; background random"
