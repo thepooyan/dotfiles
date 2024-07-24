@@ -1,8 +1,13 @@
 (defsrc
   caps j k l h
+  a s d f 
 )
 (defalias
   mcaps (tap-hold 150 150 esc (layer-while-held arrows))
+  a (tap-hold 200 200 a lalt) 
+  s (tap-hold 200 200 s lsft)
+  d (tap-hold 200 200 d lctl)
+  f (tap-hold 200 200 f lmet)
 )
-(deflayer base   @mcaps   j    k    l    h)
-(deflayer arrows _    down  up  right left)
+(deflayer base   @mcaps   j    k    l    h  @a @s @d @f )
+(deflayer arrows _    down  up  right left _ _ _ _    )
