@@ -14,7 +14,7 @@
   j (tap-hold 0 200 j lmet)
   k (tap-hold 0 200 k lctl)
   l (tap-hold 0 200 l lsft)
-  ; (tap-hold 0 200 ; lalt) 
+  ; (tap-hold 0 200 ret lalt) 
 )
 
 (deflayermap (base-layer)
@@ -30,5 +30,4 @@
   ; @;
 )
 
-(deflayer base   @caps   j    k    l    h  )
 (deflayer arrows _    down  up  right left )
