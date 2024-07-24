@@ -1,13 +1,34 @@
 (defsrc
   caps j k l h
-  a s d f 
+)
+(defcfg
+  process-unmapped-keys yes
 )
 (defalias
-  mcaps (tap-hold 150 150 esc (layer-while-held arrows))
-  a (tap-hold 200 200 a lalt) 
-  s (tap-hold 200 200 s lsft)
-  d (tap-hold 200 200 d lctl)
-  f (tap-hold 200 200 f lmet)
+  caps (tap-hold 150 150 esc (layer-while-held arrows))
+  a (tap-hold 0 200 a lalt) 
+  s (tap-hold 0 200 s lsft)
+  d (tap-hold 0 200 d lctl)
+  f (tap-hold 0 200 f lmet)
+
+  j (tap-hold 0 200 j lmet)
+  k (tap-hold 0 200 k lctl)
+  l (tap-hold 0 200 l lsft)
+  ; (tap-hold 0 200 ; lalt) 
 )
-(deflayer base   @mcaps   j    k    l    h  @a @s @d @f )
-(deflayer arrows _    down  up  right left _ _ _ _    )
+
+(deflayermap (base-layer)
+  a @a
+  s @s
+  d @d
+  f @f
+  caps @caps
+  
+  j @j
+  k @k
+  l @l
+  ; @;
+)
+
+(deflayer base   @caps   j    k    l    h  )
+(deflayer arrows _    down  up  right left )
