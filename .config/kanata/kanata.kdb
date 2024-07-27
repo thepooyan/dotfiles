@@ -6,15 +6,15 @@
 )
 (defalias
   caps (tap-hold 150 150 esc (layer-while-held arrows))
-  a (tap-hold 0 200 a lalt) 
-  s (tap-hold 0 200 s lsft)
-  d (tap-hold 0 200 d lctl)
-  f (tap-hold 0 200 f lmet)
+  a (tap-hold 200 200 a lalt) 
+  s (tap-hold 200 200 s lsft)
+  d (tap-hold 200 200 d lctl)
+  f (tap-hold 200 200 f lmet)
 
-  j (tap-hold 0 200 j lmet)
-  k (tap-hold 0 200 k lctl)
-  l (tap-hold 0 200 l lsft)
-  ; (tap-hold 0 200 ret lalt) 
+  j (tap-hold 200 200 j lmet)
+  k (tap-hold 200 200 k lctl)
+  l (tap-hold 200 200 l lsft)
+  ; (tap-hold 200 200 ret lalt) 
 )
 
 (deflayermap (base-layer)
