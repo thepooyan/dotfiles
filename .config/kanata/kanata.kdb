@@ -1,5 +1,9 @@
 (defsrc
-  caps j k l h
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
 )
 (defcfg
   process-unmapped-keys yes
@@ -15,6 +19,8 @@
   k (tap-hold 200 200 k lctl)
   l (tap-hold 200 200 l lsft)
   ; (tap-hold 200 200 ret lalt) 
+
+  spc (tap-hold 200 200 spc (layer-while-held symbols))
 )
 
 (deflayermap (base-layer)
@@ -23,12 +29,29 @@
   d @d
   f @f
   caps @caps
+
+  spc @spc
   
   j @j
   k @k
   l @l
   ; @;
   ret ; 
+  ' bspc
+) 
+
+(deflayer arrows
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    left    down    up    right    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
 )
 
-(deflayer arrows _    down  up  right left )
+(deflayer symbols 
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  1    2    3    4    5    6    7    8    9    0    [    ]    \
+  caps S-9    S-0    [    ]    {    }    j    k    l    l    ;    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
