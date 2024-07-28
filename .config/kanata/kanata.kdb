@@ -25,6 +25,7 @@
   lsft (layer-switch numbers)
   def (layer-switch base-layer)
   entrdef (multi ret @def)
+  spcdef (multi spc @def)
 )
 
 (deflayermap (base-layer)
@@ -67,5 +68,5 @@
   tab  q    w    e    r    t    y    u    0    o    p    [    ]    \
   @def 1    2    3    4    5    6    7    8    9    @entrdef    bspc    ret
   @def z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
+  lctl lmet lalt           @spcdef            ralt rmet rctl
 )
