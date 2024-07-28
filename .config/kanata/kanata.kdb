@@ -21,23 +21,29 @@
   ; (tap-hold 200 200 ret lalt) 
 
   spc (tap-hold 200 200 spc (layer-while-held symbols))
+
+  lsft (layer-switch numbers)
+  def (layer-switch base-layer)
+  entrdef (multi ret @def)
 )
 
 (deflayermap (base-layer)
+  ;; Home row
   a @a
   s @s
   d @d
   f @f
-  caps @caps
-
-  spc @spc
-  
   j @j
   k @k
   l @l
   ; @;
   ret ; 
   ' bspc
+
+  ;; Modifiers
+  caps @caps
+  spc @spc
+  lsft @lsft
 ) 
 
 (deflayer arrows
@@ -50,8 +56,16 @@
 
 (deflayer symbols 
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  S-0    ]    S-]    r    -    y    +    i    o    p    [    ]    \
-  caps S-9    [    S-[    =    S-1    S-7    ;    '    S-'    \    S-\   ret
-  lsft z    x    c    v    b    S-8    _    ,    .    /    rsft
+  tab  S-0    ]    S-]    +    S-8    y    S-5    -    o    p    [    ]    \
+  caps S-9    [    S-[    =    S-7    S-1    ;    '    S-'    S-;    \   S-6
+  lsft S-\    S-3    c    v    b    S--    `    S-4    S-2    S-`    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+(deflayer numbers 
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    0    o    p    [    ]    \
+  @def 1    2    3    4    5    6    7    8    9    @entrdef    bspc    ret
+  @def z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
