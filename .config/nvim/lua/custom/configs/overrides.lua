@@ -40,6 +40,8 @@ M.mason = {
     "tailwind-languege-server",
     "emmet-ls",
 
+    "pyright",
+
     "eslint-lsp",
     "prettierd",
     "typescript-language-server",
