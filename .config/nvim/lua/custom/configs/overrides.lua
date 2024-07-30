@@ -44,6 +44,7 @@ M.mason = {
     "pyright",
     "ruff",
     "mypy",
+    "black",
 
 
     "eslint-lsp",
