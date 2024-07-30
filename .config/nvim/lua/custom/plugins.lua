@@ -168,6 +168,13 @@ local plugins = {
         },
 
       },
+      new_notes_location = "current_dir",
+
+      ---@param title string|?
+      ---@return string
+      note_id_func = function(title)
+        return title or ""
+      end,
     },
   }
 }
