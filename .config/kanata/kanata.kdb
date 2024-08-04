@@ -9,18 +9,19 @@
   process-unmapped-keys yes
 )
 (defalias
-  caps (tap-hold 150 150 esc (layer-while-held arrows))
-  a (tap-hold 200 200 a lalt) 
-  s (tap-hold 200 200 s lsft)
-  d (tap-hold 200 200 d lctl)
-  f (tap-hold 200 200 f lmet)
+  caps (multi f24 (tap-hold 150 150 esc (layer-while-held arrows)))
+  
+  a (multi f24 (tap-hold 200 200 a lalt)) 
+  s (multi f24 (tap-hold 200 200 s lsft))
+  d (multi f24 (tap-hold 200 200 d lctl))
+  f (multi f24 (tap-hold 200 200 f lmet))
 
-  j (tap-hold 200 200 j lmet)
-  k (tap-hold 200 200 k lctl)
-  l (tap-hold 200 200 l lsft)
-  ; (tap-hold 200 200 ret lalt) 
+  j (multi f24 (tap-hold 200 200 j lmet))
+  k (multi f24 (tap-hold 200 200 k lctl))
+  l (multi f24 (tap-hold 200 200 l lsft))
+  ; (multi f24 (tap-hold 200 200 ret lalt) )
 
-  spc (tap-hold 200 200 spc (layer-while-held symbols))
+  spc (multi f24 (tap-hold 200 200 spc (layer-while-held symbols)))
 
   lsft (layer-switch numbers)
   def (layer-switch base-layer)
@@ -46,11 +47,11 @@
 ) 
 
 (deflayer arrows
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    end    home    t    y    pgup    pgdn    o    p    [    ]    \
-  caps a    s    d    f    g    left    down    up    right    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
+  _  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _  _    _    _    home    end    _    pgup    pgdn    _    _    _    _    _
+  _   _    _    _    _    tab    left    down    up    right    _    _    _
+  _ _    _    _    _    _    _    _    _    _    _    _
+  _ _ _           _            _ _ _
 )
 
 (deflayer symbols 
