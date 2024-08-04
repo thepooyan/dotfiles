@@ -47,7 +47,7 @@
 ) 
 
 (deflayer arrows
-  _  _    _    _    _    _    _    _    _    _    _    _    _    _
+  lrld  _    _    _    _    _    _    _    _    _    _    _    _    _
   _  _    _    _    home    end    _    pgup    pgdn    _    _    _    _    _
   _   _    _    _    _    tab    left    down    up    right    _    _    _
   _ _    _    _    _    _    _    _    _    _    _    _
