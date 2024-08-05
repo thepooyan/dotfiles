@@ -21,6 +21,8 @@
   l (multi f24 (tap-hold-release 200 200 l lsft))
   ; (multi f24 (tap-hold-release 200 200 ret lalt) )
 
+  r (multi f24 (tap-hold-release 200 200 r (layer-while-held music)) )
+
   spc (multi f24 (tap-hold-release 200 200 spc (layer-while-held symbols)))
 
   lsft (layer-switch numbers)
@@ -41,17 +43,19 @@
   ; @;
   ' bspc
 
+  r @r
+
   ;; Modifiers
   caps @caps
   spc @spc
 ) 
 
 (deflayer arrows
-  lrld  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _  _    _    _    home    end    _    pgup    pgdn    _    _    _    _    _
-  _   _    _    _    _    tab    left    down    up    right    _    _    _
-  _ _    _    _    _    _    _    _    _    _    _    _
-  _ _ _           _            _ _ _
+  lrld  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    home    end    i    pgup    pgdn    [    ]    \
+  caps a    s    d    f    tab    left    down    up    right    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
 )
 
 (deflayer symbols 
@@ -68,4 +72,11 @@
   @def 1    2    3    4    5    6    7    8    9    @entrdef    bspc    ret
   @def z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           @spcdef            ralt rmet rctl
+)
+(deflayer music
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    volu    voldwn    o    p    [    ]    \
+  caps a    s    d    f    g    prev    pp    mute    next    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
 )
