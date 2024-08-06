@@ -42,7 +42,7 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+apostrophe split h
+bindsym $mod+BackSpace split h
 bindsym $mod+b split v
 bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking

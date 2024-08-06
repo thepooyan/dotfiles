@@ -23,7 +23,7 @@
 
   r (multi f24 (tap-hold-release 200 200 r (layer-while-held music)) )
 
-  spc (multi f24 (tap-hold-release 200 200 spc (layer-while-held symbols)))
+  spc (multi f24 (tap-hold-release 0 200 spc (layer-while-held symbols)))
 
   lsft (layer-switch numbers)
   def (layer-switch base-layer)
@@ -52,7 +52,7 @@
 
 (deflayer arrows
   lrld  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    home    end    pgdn    pgup    p    [    ]    \
+  tab  q    w    e    r    t    end    home    pgdn    pgup    p    [    ]    \
   _ _    _    _    _    tab    left    down    up    right    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           tab            ralt rmet rctl
