@@ -9,7 +9,7 @@
   process-unmapped-keys yes
 )
 (defalias
-  caps (multi f24 (tap-hold 150 150 esc (layer-while-held arrows)))
+  caps (multi f24 (tap-hold 150 150 esc (layer-while-held navigation)))
   
   a (multi f24 (tap-hold-release 200 200 a lalt)) 
   s (multi f24 (tap-hold-release 200 200 s lsft))
@@ -21,14 +21,14 @@
   l (multi f24 (tap-hold-release 200 200 l lsft))
   ; (multi f24 (tap-hold-release 200 200 ret lalt) )
 
-  r (multi f24 (tap-hold-release 200 200 r (layer-while-held music)) )
+  r (multi f24 (tap-hold-release 200 200 r (layer-while-held media)) )
 
   spc (multi f24 (tap-hold-release 0 200 spc (layer-while-held symbols)))
 
-  lsft (layer-switch numbers)
-  def (layer-switch base-layer)
-  entrdef (multi ret @def)
-  spcdef (multi spc @def)
+  numbers (layer-switch numbers)
+  base (layer-switch base-layer)
+  entr* (multi ret @base)
+  spc* (multi spc @base)
 )
 
 (deflayermap (base-layer)
@@ -50,12 +50,12 @@
   spc @spc
 ) 
 
-(deflayer arrows
+(deflayer navigation
   lrld  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    end    home    pgdn    pgup    p    [    ]    \
-  _ _    _    _    _    tab    left    down    up    right    ;    '    ret
+  _ _    _    _    _    _    left    down    up    right    tab    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           tab            ralt rmet rctl
+  lctl lmet lalt           spc            ralt rmet rctl
 )
 
 (deflayer symbols 
@@ -69,11 +69,11 @@
 (deflayer numbers 
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    0    o    p    [    ]    \
-  @def 1    2    3    4    5    6    7    8    9    @entrdef    bspc    ret
-  @def z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           @spcdef            ralt rmet rctl
+  @base 1    2    3    4    5    6    7    8    9    @entr*    bspc    ret
+  @base z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           @spc*            ralt rmet rctl
 )
-(deflayer music
+(deflayer media
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    voldwn    volu    p    [    ]    \
   caps a    s    d    f    g    prev    pp    mute    next    ;    '    ret
