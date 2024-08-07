@@ -9,6 +9,15 @@ if [ $current -gt 10 ]; then
   current_X=$((current % 10))
 fi
 
+workspace_exists() {
+  test=$(i3-msg -t get_workspaces | jq '.[] | select(.num == '$1')')
+  if [[ -z "$test" ]];then
+    echo false
+  else
+    echo true
+  fi
+}
+
 get_workspace_num() {
   case $1 in
     up)
