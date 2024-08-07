@@ -59,5 +59,19 @@ if [[ $isMatrix = true ]]; then
     echo $current_Y$dx
   fi
 else 
+  if [[ $direction == left ]]; then
+    if [[ $current == 1 ]];then 
+      exit
+    fi
+    echo $((current-1))
+    exit
+  fi
+  if [[ $direction == right ]]; then
+    if [[ $current == 9 ]];then 
+      exit
+    fi
+    echo $((current+1))
+    exit
+  fi
   get_workspace_num $direction
 fi
