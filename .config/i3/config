@@ -62,6 +62,40 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws21 "21"
+set $ws22 "22"
+set $ws23 "23"
+set $ws31 "31"
+set $ws32 "32"
+set $ws33 "33"
+
+# left
+workspace $ws1 output eDP-1
+workspace $ws3 output eDP-1
+workspace $ws5 output eDP-1
+workspace $ws7 output eDP-1
+workspace $ws9 output eDP-1
+workspace $ws11 output eDP-1
+workspace $ws21 output eDP-1
+workspace $ws31 output eDP-1
+
+# right monitor
+workspace $ws2 output HDMI-1-1
+workspace $ws4 output HDMI-1-1
+workspace $ws6 output HDMI-1-1
+workspace $ws8 output HDMI-1-1
+workspace $ws0 output HDMI-1-1
+workspace $ws12 output HDMI-1-1
+workspace $ws13 output HDMI-1-1
+workspace $ws22 output HDMI-1-1
+workspace $ws23 output HDMI-1-1
+workspace $ws32 output HDMI-1-1
+workspace $ws33 output HDMI-1-1
+
  
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
