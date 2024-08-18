@@ -21,6 +21,9 @@
   l (multi f24 (tap-hold-release 200 200 l lsft))
   ; (multi f24 (tap-hold-release 200 200 ret lalt) )
 
+  g (multi f24 (tap-hold-release 200 200 g (layer-while-held numbers)))
+  h (multi f24 (tap-hold-release 200 200 h (layer-while-held numbers)))
+
   r (multi f24 (tap-hold-release 200 200 r (layer-while-held media)) )
 
   spc (multi f24 (tap-hold-release 0 200 spc (layer-while-held symbols)))
@@ -42,6 +45,9 @@
   l @l
   ; @;
   ' bspc
+
+  g @g
+  h @h
 
   r @r
 
@@ -65,8 +71,14 @@
   lsft S-\    S-3    c    v    b    S--    `    S-4    S-2    S-`    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
-
 (deflayer numbers 
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  6    7    8    9    t    y    u    0    o    p    [    ]    \
+  0    1    2    3    4    5    6    7    8    9    ret   bspc    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           @spc*            ralt rmet rctl
+)
+(deflayer numbersToggle 
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    0    o    p    [    ]    \
   @base 1    2    3    4    5    6    7    8    9    @entr*    bspc    ret
