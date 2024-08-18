@@ -20,6 +20,7 @@ local opt = vim.opt
 
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldlevel = 99          -- Open all folds by default
+opt.foldlevel = 99          -- Open all folds by default
+opt.conceallevel = 2;
 
 return M
