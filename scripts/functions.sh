@@ -1,5 +1,14 @@
 #!/bin/bash
 
+shecan() {
+  nmcli con mod Salmani_5G ipv4.dns "178.22.122.100 185.51.200.2"
+  sudo systemctl restart NetworkManager
+}
+unshecan() {
+  nmcli con mod Salmani_5G ipv4.dns ""
+  sudo systemctl restart NetworkManager
+}
+
 pooyan() {
   nmcli dev wifi rescan
   nmcli dev wifi connect pooyan password $(pass show wifi/pooyan)
