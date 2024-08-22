@@ -58,9 +58,9 @@
 
 (deflayer navigation
   lrld  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    end    home    pgdn    pgup    f12    [    ]    \
+  tab  q    w    e    r    t    end    home    pgdn    pgup    p    [    ]    \
   _ _    _    _    _    _    left    down    up    right    tab    f11    ret
-  lsft z    x    c    v    b    n    m    C-pgup    C-pgdn    /    rsft
+  lsft z    x    c    v    b    f12    m    C-pgup    C-pgdn    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
 
