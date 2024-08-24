@@ -17,7 +17,28 @@ local plugins = {
   {
     "folke/flash.nvim",
     event = "VeryLazy",
-    opts = {},
+    opts = {
+      jump = {
+        autojump = false
+      },
+      label = {
+        uppercase = false,
+        style = "inline",
+        rainbow = {
+          enabled = false,
+          shade = 3
+        }
+      },
+      highlight = {
+        backdrop = true,
+        matches = false
+      },
+      modes = {
+        char = {
+          highlight = { backdrop = false }
+        }
+      }
+    },
     keys = {
       { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
       { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
