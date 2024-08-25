@@ -73,3 +73,4 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
 
 export PATH="$PATH:$HOME/.config/emacs/bin/"
+export EDITOR="nvim"
