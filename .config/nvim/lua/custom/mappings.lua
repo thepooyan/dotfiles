@@ -8,8 +8,8 @@ M.general = {
     ["<C-k>"] = {"<cmd> TmuxNavigateUp<cr>", "widnow up"},
     ["<C-j>"] = {"<cmd> TmuxNavigateDown<cr>", "widnow down"},
 
-    ["<S-l>"] = {"f ", "jump forward by spaces"},
-    ["<S-h>"] = {"F ", "jump backwards by spaces"},
+    ["<S-l>"] = {"f l", "jump forward by spaces"},
+    ["<S-h>"] = {"F h", "jump backwards by spaces"},
   },
   v = {
     [">"] = { ">gv", "indent"},
