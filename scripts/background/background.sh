@@ -13,6 +13,11 @@ background() {
     touch $store
   fi
 
+  refresh() {
+    target=$prev
+    apply
+  }
+
   next() {
     f() {
       ls -1 $back_loc
@@ -66,7 +71,7 @@ background() {
 }
 
 _background() { 
-  compadd next random 
+  compadd next random refresh
 } 
 
 compdef _background background
