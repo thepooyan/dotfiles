@@ -2,68 +2,102 @@ local overrides = require("custom.configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
-  {
-    lazy = false,
-    "Exafunction/codeium.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    config = function()
-      require("codeium").setup({
-      })
-    end
-  },
-  {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    opts = {
-      jump = {
-        autojump = false
-      },
-      label = {
-        uppercase = false,
-        style = "inline",
-        rainbow = {
-          enabled = false,
-          shade = 3
-        }
-      },
-      highlight = {
-        backdrop = true,
-        matches = false
-      },
-      modes = {
-        char = {
-          highlight = { backdrop = false }
-        }
-      }
-    },
-    keys = {
-      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-      { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-    },
-  },
+	{
+		lazy = false,
+		"Exafunction/codeium.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"hrsh7th/nvim-cmp",
+		},
+		config = function()
+			require("codeium").setup({})
+		end,
+	},
+	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		opts = {
+			jump = {
+				autojump = false,
+			},
+			label = {
+				uppercase = false,
+				style = "inline",
+				rainbow = {
+					enabled = false,
+					shade = 3,
+				},
+			},
+			highlight = {
+				backdrop = true,
+				matches = false,
+			},
+			modes = {
+				char = {
+					highlight = { backdrop = false },
+				},
+			},
+		},
+		keys = {
+			{
+				"s",
+				mode = { "n", "x", "o" },
+				function()
+					require("flash").jump()
+				end,
+				desc = "Flash",
+			},
+			{
+				"S",
+				mode = { "n", "x", "o" },
+				function()
+					require("flash").treesitter()
+				end,
+				desc = "Flash Treesitter",
+			},
+			{
+				"r",
+				mode = "o",
+				function()
+					require("flash").remote()
+				end,
+				desc = "Remote Flash",
+			},
+			{
+				"R",
+				mode = { "o", "x" },
+				function()
+					require("flash").treesitter_search()
+				end,
+				desc = "Treesitter Search",
+			},
+			{
+				"<c-s>",
+				mode = { "c" },
+				function()
+					require("flash").toggle()
+				end,
+				desc = "Toggle Flash Search",
+			},
+		},
+	},
 	{
 		"David-Kunz/gen.nvim",
 		lazy = false,
 		config = function()
-      local gen = require("gen")
+			local gen = require("gen")
 			gen.setup({
-        model = "phi3:mini",
-        quit_map = "q",
-        retry_map = "<c-r>",
-        accept_map = "<c-cr>",
-        host = "localhost",
-        port = "11434",
-        display_mode = "float",
-        show_prompt = false,
-        show_model = false,
-        no_auto_close = false,
-        hidden = false,
+				model = "phi3:mini",
+				quit_map = "q",
+				retry_map = "<c-r>",
+				accept_map = "<c-cr>",
+				host = "localhost",
+				port = "11434",
+				display_mode = "float",
+				show_prompt = false,
+				show_model = false,
+				no_auto_close = false,
+				hidden = false,
 				init = function(options)
 					pcall(io.popen, "ollama serve > /dev/null 2>&1 &")
 				end,
@@ -78,8 +112,8 @@ local plugins = {
 			})
 			gen.prompts["Generate"] = {
 				prompt = "Generate a code that does this '$input'. don't write any comments, and don't explain anyting, and don't test the code after you write it. Only ouput the result in this format:```ts\n...\n```",
-        extract = "```typescript\n(.-)```",
-        replace = true
+				extract = "```typescript\n(.-)```",
+				replace = true,
 			}
 		end,
 	},
