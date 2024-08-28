@@ -1,5 +1,9 @@
 #!/bin/bash
 
+docker_cdi() {
+  docker rmi $(docker images -f "dangling=true" -q)
+}
+
 shecan() {
   nmcli con mod Salmani_5G ipv4.dns "178.22.122.100 185.51.200.2"
   sudo systemctl restart NetworkManager
