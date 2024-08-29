@@ -7,7 +7,7 @@ Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin
 Environment=DISPLAY=:0
 Environment=HOME=/path/to/home/folder
 Type=simple
-ExecStart=/usr/bin/kanata --cfg /home/pooyan/dotfiles/.config/kanata/kanata.kdb
+ExecStart=/home/pooyan/.nix-profile/bin/kanata --cfg /home/pooyan/dotfiles/.config/kanata/kanata.kdb
 Restart=never
 
 [Install]

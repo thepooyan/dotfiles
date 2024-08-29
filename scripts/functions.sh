@@ -1,5 +1,9 @@
 #!/bin/bash
 
+install() {
+  nix-env -iA nixpkgs.$1
+}
+
 docker_cdi() {
   docker rmi $(docker images -f "dangling=true" -q)
 }

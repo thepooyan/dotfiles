@@ -53,8 +53,6 @@ alias cat=bat
 alias ls=exa
 alias tree="eza --tree"
 alias upm="/home/pooyan/dotfiles/scripts/upm/upm.sh"
-alias install="upm install"
-alias remove="upm remove"
 
 func="/home/pooyan/dotfiles/scripts/functions.sh"
 [ -f $func ] && source $func
