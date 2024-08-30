@@ -1,5 +1,9 @@
 #!/bin/bash
 
+search() {
+  nix-search $1 | less
+}
+
 install() {
   nix-env -iA nixpkgs.$1
 }
