@@ -81,7 +81,15 @@ doc() {
 
 not() {
   cd notes
-  vim Linux.md
+  vim 0_start.md
+
+  # after exit
+
+  if git diff --quiet; then
+    echo "No differences found"
+    return
+  fi
+
   git add .
   git commit -m "$(date +"%D %a %r")"
   git push origin master && {
