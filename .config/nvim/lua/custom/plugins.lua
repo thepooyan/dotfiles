@@ -7,9 +7,9 @@ local plugins = {
 		"Pocco81/auto-save.nvim",
 		opts = {
 			{
-				enabled = true, 
+				enabled = true,
 				execution_message = {
-					message = function() 
+					message = function()
 						return ("AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"))
 					end,
 					dim = 0.18,
