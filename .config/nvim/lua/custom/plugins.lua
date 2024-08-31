@@ -3,13 +3,18 @@ local overrides = require("custom.configs.overrides")
 ---@type NvPluginSpec[]
 local plugins = {
 	{
-    "echasnovski/mini.nvim",
-    version = false,
-    event = "VeryLazy",
-    config = function()
-      require("mini.ai").setup()
-    end
-  },
+		"echasnovski/mini.nvim",
+		version = false,
+		event = "VeryLazy",
+		config = function()
+      local spec_treesitter = require('mini.ai').gen_spec.treesitter
+			require("mini.ai").setup({
+				custom_textobjects = {
+					F = spec_treesitter({ a = "@function.outer", i = "@function.inner" }),
+				},
+			})
+		end,
+	},
 	{
 		lazy = false,
 		"Pocco81/auto-save.nvim",
