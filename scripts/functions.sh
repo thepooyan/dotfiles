@@ -1,5 +1,13 @@
 #!/bin/bash
 
+tkanata() {
+  if systemctl --user is-active --quiet kanata.service; then
+    systemctl stop --user kanata.service
+  else
+    systemctl start --user kanata.service
+  fi
+}
+
 search() {
   nix-search $1 | less
 }
