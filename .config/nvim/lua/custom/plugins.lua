@@ -3,6 +3,14 @@ local overrides = require("custom.configs.overrides")
 ---@type NvPluginSpec[]
 local plugins = {
 	{
+    "echasnovski/mini.nvim",
+    version = false,
+    event = "VeryLazy",
+    config = function()
+      require("mini.ai").setup()
+    end
+  },
+	{
 		lazy = false,
 		"Pocco81/auto-save.nvim",
 		opts = {
