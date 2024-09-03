@@ -25,7 +25,7 @@
 	ren = ac RENAME
 	note = ac NOTE
 [core]
-	editor = vim
+	editor = nvim
 [user]
 	name = pooyan
 	email = thepooyan@gmail.com
