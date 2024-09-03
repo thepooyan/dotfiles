@@ -24,11 +24,11 @@
   g (multi f24 (tap-hold-release 200 200 g (layer-while-held numbers)))
   h (multi f24 (tap-hold-release 200 200 h (layer-while-held numbers)))
 
-  i (multi f24 (tap-hold-release 200 200 i (layer-while-held util)))
-
   pi (multi f24 (tap-hold-release 200 200 i (layer-while-held persian-util)))
-
+  i (multi f24 (tap-hold-release 200 200 i (layer-while-held util)))
   r (multi f24 (tap-hold-release 200 200 r (layer-while-held media)) )
+
+  u (multi f24 (tap-hold-release 200 200 u (layer-while-held emoji)))
 
   spc (multi f24 (tap-hold-release 0 200 spc (layer-while-held symbols)))
 
@@ -57,11 +57,12 @@
   h @h
 
   i @i
-
   r @r
 
-  rctl @persian
+  u @u
+
   ;; Modifiers
+  rctl @persian
   caps @caps
   spc @spc
   esc caps
@@ -116,6 +117,36 @@
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
+(deflayermap (emoji)
+  g (unicode 😂)
+  f (unicode 😭)
+  d (unicode 🥺)
+  s (unicode 😝)
+  a (unicode 😅)
+
+  b (unicode 😘)
+  v (unicode 🙃)
+  c (unicode 😁)
+  x (unicode 😎)
+  z (multi (unicode 👉) (unicode 👈))
+
+  t (unicode 🖐)
+  r (unicode 😐)
+  e (unicode 🤦)
+  w (unicode 👍)
+  q (unicode 🙏)
+
+  tab (unicode 💔)
+  caps (unicode 😋)
+  lsft (unicode 🥲)
+  lctl (unicode 😌)
+  lmet (unicode 😔)
+  spc (unicode ❤)
+  lalt (unicode 💀)
+
+  i (unicode 🥰)
+  o (unicode ☹)
+)
 (deflayermap (persian)
   ;; Home row
   a @a
@@ -130,8 +161,9 @@
   h @h
 
   i @pi
-
   r @r
+
+  u @u
 
   rctl @ctrl-base
   ;; Modifiers
