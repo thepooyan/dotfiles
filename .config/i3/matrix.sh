@@ -9,15 +9,6 @@ if [ $current -gt 10 ]; then
   current_X=$((current % 10))
 fi
 
-workspace_exists() {
-  test=$(i3-msg -t get_workspaces | jq '.[] | select(.num == '$1')')
-  if [[ -z "$test" ]];then
-    echo false
-  else
-    echo true
-  fi
-}
-
 get_workspace_num() {
   case $1 in
     up)
@@ -68,34 +59,5 @@ if [[ $isMatrix = true ]]; then
     echo $current_Y$dx
   fi
 else 
-  if [[ $direction == left ]]; then
-    if [[ $current == 1 ]];then 
-      exit
-    fi
-    try=$((current-1))
-    while [[ "$(workspace_exists $try)" == "false" ]]; do
-      try=$((try-1))
-      if [[ "$try" == "0" ]];then
-        exit
-      fi
-    done
-
-    echo $try
-    exit
-  fi
-  if [[ $direction == right ]]; then
-    if [[ $current == 10 ]];then 
-      exit
-    fi
-    try=$((current+1))
-    while [[ "$(workspace_exists $try)" == "false" ]]; do
-      try=$((try+1))
-      if [[ "$try" == "11" ]];then
-        exit
-      fi
-    done
-    echo $try
-    exit
-  fi
-  get_workspace_num $direction
+  echo $(get_workspace_num $direction)
 fi

@@ -18,54 +18,12 @@ workspace_exists() {
   fi
 }
 
-get_workspace_num() {
-  case $1 in
-    up)
-      echo 12
-      ;;
-    down)
-      echo 32
-      ;;
-    left)
-      echo 21
-      ;;
-    right)
-      echo 23
-      ;;
-    *)
-      echo 22
-      ;;
-  esac
-}
-
 if [[ $isMatrix = true ]]; then
-  if [[ $direction == up ]]; then
-    dy=$((current_Y-1))
-    if ((dy < 1)); then
-      dy=3
-    fi
-    echo $dy$current_X
-  fi
-  if [[ $direction == down ]]; then
-    dy=$((current_Y+1))
-    if ((dy > 3)); then
-      dy=1
-    fi
-    echo $dy$current_X
-  fi
   if [[ $direction == left ]]; then
-    dx=$((current_X-1))
-    if ((dx < 1)); then
-      dx=3
-    fi
-    echo $current_Y$dx
+    echo 5
   fi
   if [[ $direction == right ]]; then
-    dx=$((current_X+1))
-    if ((dx > 3)); then
-      dx=1
-    fi
-    echo $current_Y$dx
+    echo 6
   fi
 else 
   if [[ $direction == left ]]; then
@@ -97,5 +55,4 @@ else
     echo $try
     exit
   fi
-  get_workspace_num $direction
 fi
