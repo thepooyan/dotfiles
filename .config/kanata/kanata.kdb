@@ -26,12 +26,14 @@
 
   i (multi f24 (tap-hold-release 200 200 i (layer-while-held util)))
 
+  pi (multi f24 (tap-hold-release 200 200 i (layer-while-held persian-util)))
+
   r (multi f24 (tap-hold-release 200 200 r (layer-while-held media)) )
 
   spc (multi f24 (tap-hold-release 0 200 spc (layer-while-held symbols)))
 
-  persian (multi f24 (tap-hold-release 200 200 rctl (layer-switch persian)) )
-  base (multi f24 (tap-hold-release 200 200 rctl (layer-switch base)) )
+  persian (multi rctl (layer-switch persian))
+  ctrl-base (multi rctl (layer-switch base-layer))
 
   numbers (layer-switch numbers)
   base (layer-switch base-layer)
@@ -66,7 +68,7 @@
 (deflayer navigation
   lrld  1    2    3    4    5    6    7    8    9    0    C--    C-+    bspc
   tab  del    w    e    f4    t    home    end    pgup    pgdn    p    [    ]    \
-  _ _    _    _    _    g    left    down    up    right    tab    f11    ret
+  _ @a    @s    lctrl    @f    g    left    down    up    right    tab    f11    ret
   lsft z    x    c    v    b    f12    m    C-pgup    C-pgdn    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
@@ -99,17 +101,39 @@
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
-(deflayer util
+(deflayer persian-util
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    rctl    t    y    u    i    o    p    [    ]    \
+  tab  q    w    e    @ctrl-base    t    y    u    i    o    p    [    ]    \
   caps C-S-+    C-S--    C-+    C--    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
-(deflayer persian
+(deflayer util
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  tab  q    w    e    @persian    t    y    u    i    o    p    [    ]    \
+  caps C-S-+    C-S--    C-+    C--    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet @base
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+(deflayermap (persian)
+  ;; Home row
+  a @a
+  s @s
+  d @d
+  f @f
+  j @j
+  k @k
+  l @l
+
+  g @g
+  h @h
+
+  i @pi
+
+  r @r
+
+  rctl @ctrl-base
+  ;; Modifiers
+  caps @caps
+  spc @spc
 )
