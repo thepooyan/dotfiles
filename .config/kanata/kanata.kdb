@@ -28,6 +28,7 @@
   i (multi f24 (tap-hold-release 200 200 i (layer-while-held util)))
   r (multi f24 (tap-hold-release 200 200 r (layer-while-held media)) )
 
+  pu (multi f24 (tap-hold-release 200 200 u (multi (layer-while-held emoji) f24) ))
   u (multi f24 (tap-hold-release 200 200 u (layer-while-held emoji)))
 
   spc (multi f24 (tap-hold-release 0 200 spc (layer-while-held symbols)))
