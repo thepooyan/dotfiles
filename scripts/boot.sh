@@ -2,4 +2,4 @@
 
 # add persian
 setxkbmap -layout us,ir
-setxkbmap -option 'grp:ctrl_alt_toggle'
+setxkbmap -option 'grp:rctrl_toggle'
