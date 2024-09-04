@@ -178,6 +178,7 @@ bindsym $mod+Mod1+Right exec "i3-msg resize grow right 10 px or 10 ppt || i3-msg
 bindsym $mod+o exec "~/appImages/Obsidian/Obsidian-1.5.3.AppImage"
 bindsym $mod+g exec google-chrome-stable
 bindsym $mod+y exec vivaldi
+bindsym $mod+u exec "~/dotfiles/scripts/search.sh"
 bindsym $mod+n exec "dolphin --new-window /home/pooyan/"
 bindsym $mod+t exec konsole -e 'tmux attach'
 bindsym $mod+shift+t exec konsole -e tmux
