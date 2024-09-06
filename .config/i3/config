@@ -140,8 +140,8 @@ bindsym $mod+p move workspace to output right
 bindsym $mod+ctrl+comma exec "i3-msg workspace number $(~/.config/i3/tiles.sh left)"
 bindsym $mod+ctrl+period exec "i3-msg workspace number $(~/.config/i3/tiles.sh right)"
 
-bindsym $mod+Shift+ctrl+comma exec "i3-msg move workspace number $(~/.config/i3/tiles.sh left)"
-bindsym $mod+Shift+ctrl+period exec "i3-msg move workspace number $(~/.config/i3/tiles.sh right)"
+bindsym $mod+Shift+ctrl+comma exec "i3-msg move workspace number $(~/.config/i3/tiles.sh left);i3-msg workspace number $(~/.config/i3/tiles.sh left)"
+bindsym $mod+Shift+ctrl+period exec "i3-msg move workspace number $(~/.config/i3/tiles.sh right);i3-msg workspace number $(~/.config/i3/tiles.sh right)"
 
 bindsym $mod+ctrl+h exec "i3-msg workspace number $(~/.config/i3/matrix.sh left)"
 bindsym $mod+ctrl+l exec "i3-msg workspace number $(~/.config/i3/matrix.sh right)"
