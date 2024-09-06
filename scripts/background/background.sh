@@ -41,6 +41,12 @@ background() {
 
   random() {
 
+    if [ "$(ls "$back_loc" | wc -l)" = "1" ];then
+      echo there\'s only one file in the background folder
+      target=$(ls "$back_loc")
+      return
+    fi
+
     while [ "$target" = "$prev" ]
     do
       target=$(ls "$back_loc" | shuf -n 1)
