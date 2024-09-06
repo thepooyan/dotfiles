@@ -30,29 +30,31 @@ else
     if [[ $current == 1 ]];then 
       exit
     fi
-    try=$((current-1))
-    while [[ "$(workspace_exists $try)" == "false" ]]; do
-      try=$((try-1))
-      if [[ "$try" == "0" ]];then
-        exit
-      fi
-    done
-
-    echo $try
+    # try=$((current-1))
+    # while [[ "$(workspace_exists $try)" == "false" ]]; do
+    #   try=$((try-1))
+    #   if [[ "$try" == "0" ]];then
+    #     exit
+    #   fi
+    # done
+    # echo $try
+    echo $((current-1))
     exit
   fi
   if [[ $direction == right ]]; then
     if [[ $current == 10 ]];then 
       exit
     fi
-    try=$((current+1))
-    while [[ "$(workspace_exists $try)" == "false" ]]; do
-      try=$((try+1))
-      if [[ "$try" == "11" ]];then
-        exit
-      fi
-    done
-    echo $try
+    # try=$((current+1))
+    # while [[ "$(workspace_exists $try)" == "false" ]]; do
+    #
+    #   try=$((try+1))
+    #   if [[ "$try" == "11" ]];then
+    #     exit
+    #   fi
+    # done
+    # echo $try
+    echo $((current+1))
     exit
   fi
 fi
