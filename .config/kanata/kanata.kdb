@@ -25,17 +25,14 @@
   g (multi f24 (tap-hold-release 200 200 g (layer-while-held numbers)))
   h (multi f24 (tap-hold-release 200 200 h (layer-while-held numbers)))
 
-  pi (multi f24 (tap-hold-release 200 200 i (layer-while-held persian-util)))
-  i (multi f24 (tap-hold-release 200 200 i (layer-while-held util)))
+  i (multi f24 (tap-hold-release 0 200 i (layer-while-held symbols)))
   r (multi f24 (tap-hold-release 200 200 r (layer-while-held media)) )
 
-  pu (multi f24 (tap-hold-release 200 200 u (multi (layer-while-held emoji) f24) ))
   u (multi f24 (tap-hold-release 200 200 u (layer-while-held emoji)))
 
-  spc (multi f24 (tap-hold-release 0 200 spc (layer-while-held symbols)))
+  spc (multi f24 (tap-hold-release 200 200 spc (layer-while-held util)))
 
-  persian (multi rctl (layer-switch persian))
-  ctrl-base (multi rctl (layer-switch base-layer))
+  switch-lang rctl
 
   numbers (layer-switch numbers)
   base (layer-switch base-layer)
@@ -64,7 +61,6 @@
   u @u
 
   ;; Modifiers
-  rctl @persian
   caps @caps
   spc @spc
   esc caps
@@ -105,16 +101,9 @@
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
-(deflayer persian-util
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    @ctrl-base    t    y    u    i    o    p    [    ]    \
-  caps C-S-+    C-S--    C-+    C--    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
-)
 (deflayer util
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    @persian    t    y    u    i    o    p    [    ]    \
+  tab  q    w    e    @switch-lang    t    y    u    i    o    p    [    ]    \
   caps C-S-+    C-S--    C-+    C--    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
@@ -148,8 +137,4 @@
 
   i (unicode 🥰)
   o (unicode ☹)
-)
-(deflayermap (persian)
-  i @pi
-  rctl @ctrl-base
 )
