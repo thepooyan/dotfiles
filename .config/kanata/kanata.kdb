@@ -28,6 +28,7 @@
   i (multi f24 (tap-hold-release 0 200 i (layer-while-held symbols)))
   r (multi f24 (tap-hold-release 200 200 r (layer-while-held media)) )
 
+  pu (multi f24 (tap-hold-release 200 200 u (layer-while-held persian-emoji)))
   u (multi f24 (tap-hold-release 200 200 u (layer-while-held emoji)))
 
   p-spc (multi f24 (tap-hold-release 200 200 spc (layer-while-held persian-util)))
@@ -125,6 +126,7 @@
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
+
 (deflayermap (emoji)
   g (unicode 😂)
   f (unicode 😭)
@@ -155,8 +157,40 @@
   i (unicode 🥰)
   o (unicode ☹)
 )
+(deflayermap (persian-emoji)
+  g (macro rctl (unicode 😂) rctl)
+  f (macro rctl (unicode 😭) rctl)
+  d (macro rctl (unicode 🥺) rctl)
+  s (macro rctl (unicode 😝) rctl)
+  a (macro rctl (unicode 😅) rctl)
+
+  b (macro rctl (unicode 😘) rctl)
+  v (macro rctl (unicode 🙃) rctl)
+  c (macro rctl (unicode 😁) rctl)
+  x (macro rctl (unicode 😎) rctl)
+  z (macro rctl (unicode 👉) (unicode 👈) 5 rctl)
+
+  t (macro rctl (unicode 🖐) rctl)
+  r (macro rctl (unicode 😐) rctl)
+  e (macro rctl (unicode 🤦) rctl)
+  w (macro rctl (unicode 👍) rctl)
+  q (macro rctl (unicode 🙏) rctl)
+
+  tab (macro rctl (unicode 💔) rctl)
+  caps (macro rctl (unicode 😋) rctl)
+  lsft (macro rctl (unicode 🥲) rctl)
+  lctl (macro rctl (unicode 😌) rctl)
+  lmet (macro rctl (unicode 😔) rctl)
+  spc (macro rctl (unicode ❤) rctl)
+  lalt (macro rctl (unicode 💀) rctl)
+
+  i (macro rctl (unicode 🥰) rctl)
+  o (macro rctl (unicode ☹) rctl)
+)
+
 (deflayermap (persian)
   spc @p-spc
+  u @pu
   ; @f;
   ' @f'
 )
