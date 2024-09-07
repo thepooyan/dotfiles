@@ -49,6 +49,8 @@
   fc (fork S-[ S-] (lsft))
   fb (fork [ (unmod ]) (lsft))
   ft (fork S-, . (lsft))
+
+  typing (layer-switch typing)
 )
 
 (deflayermap (base-layer)
@@ -79,7 +81,7 @@
 (deflayer navigation
   lrld  1    2    3    4    5    6    7    8    9    0    C--    C-+    bspc
   tab  del    w    e    f4    t    home    end    pgup    pgdn    p    [    ]    \
-  _ @a    @s    lctrl    @f    g    left    down    up    right    tab    f11    ret
+  _ @a    @s    lctrl    @f    g    left    down    up    right    tab    f11    @typing
   lsft z    x    c    v    b    f12    m    C-pgup    C-pgdn    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
@@ -193,4 +195,11 @@
   u @pu
   ; @f;
   ' @f'
+)
+(deflayer typing
+  _  1    2    3    4    5    6    7    8    9    0    -    =    _
+  _  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  _ a    s    d    f    g    h    j    k    l    _    _    @base
+  _ z    x    c    v    b    n    m    ,    .    /    _
+  _ _ _           _            _ _ _
 )

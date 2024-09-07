@@ -1,0 +1,10 @@
+(defsrc)
+
+(defalias
+  ret (fork ret lrnx (caps))
+)
+
+(deflayermap (base-layer)
+  caps esc
+  ret @ret
+)
