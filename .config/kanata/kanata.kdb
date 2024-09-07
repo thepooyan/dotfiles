@@ -43,6 +43,11 @@
 
   f; (fork ; (unmod ret) (lctrl lalt lmeta lsft))
   f' (fork ' bspc (lctrl lalt lmeta lsft))
+
+  fp (fork S-9 S-0 (lsft))
+  fc (fork S-[ S-] (lsft))
+  fb (fork [ (unmod ]) (lsft))
+  ft (fork S-, . (lsft))
 )
 
 (deflayermap (base-layer)
@@ -80,9 +85,9 @@
 
 (deflayer symbols 
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  S-0    S-]    ]    +    S-8    y    S-5    -    S-,    S-.    [    ]    \
-  spc S-9    S-[    [    =    S-7    S-1    S-;    '    S-'    ;    '   S-6
-  lsft S-\    S-3    c    v    b    S--    `    S-4    S-2    S-`    rsft
+  S-6  S-8    @ft    '    -    +    S-2    S-'    i    S-4    p    [    ]    \
+  ` @fp    @fc    @fb    =    S-7    S-1    S-;    k    lsft    ;    S-5   ret
+  lsft S-\    S-3    c    S--    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
 (deflayer numbers 
