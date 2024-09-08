@@ -13,6 +13,7 @@ M.general = {
   },
   v = {
     [">"] = { ">gv", "indent"},
+    ["<Esc>"] = { "<cmd>NoiceDismiss<CR>", ""},
   },
 }
 M.telescope = {
