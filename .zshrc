@@ -45,15 +45,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # zinit snippet OMZP::command-not-found
 
 # My config
-
-alias cls=clear
-alias vi="/usr/bin/vim"
-alias hibernate="systemctl hibernate"
-alias cat=bat
-alias ls=exa
-alias tree="eza --tree"
-alias upm="/home/pooyan/dotfiles/scripts/upm/upm.sh"
-
 func="/home/pooyan/dotfiles/scripts/functions.sh"
 [ -f $func ] && source $func
 
