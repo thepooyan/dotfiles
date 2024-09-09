@@ -10,10 +10,11 @@ M.general = {
 
     ["<S-l>"] = {"f l", "jump forward by spaces"},
     ["<S-h>"] = {"F h", "jump backwards by spaces"},
+    ["<leader>]"] = { ":Gen<CR>", "" },
+    ["<Esc>"] = { "<cmd>NoiceDismiss<CR>", ""},
   },
   v = {
     [">"] = { ">gv", "indent"},
-    ["<Esc>"] = { "<cmd>NoiceDismiss<CR>", ""},
   },
 }
 M.telescope = {

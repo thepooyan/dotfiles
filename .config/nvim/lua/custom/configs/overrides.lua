@@ -46,11 +46,9 @@ M.mason = {
     "mypy",
     "black",
 
-
     "eslint-lsp",
     "prettierd",
     "typescript-language-server",
-
   },
 }
 
