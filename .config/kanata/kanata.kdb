@@ -147,15 +147,15 @@
   x (unicode 😋)
   z (unicode 😌)
   caps (multi (unicode 👉) (unicode 👈))
-  lalt (unicode 💔)
   spc (unicode ❤)
   o (unicode 💀)
-  i (unicode 🤦)
+  i (unicode 💔)
   tab (unicode 😐)
   lsft (unicode 👍)
   lctrl (unicode 🖐)
   lmeta (unicode 🙏)
-
+  lalt (unicode 🤦)
+  ; ret
 )
 (deflayermap (persian-emoji)
  
@@ -175,15 +175,15 @@
   x (macro rctl (unicode 😋) rctl)
   z (macro rctl (unicode 😌) rctl)
   caps (macro rctl (unicode 👈) (unicode 👉) 5 rctl)
-  lalt (macro rctl (unicode 💔) rctl)
+  lalt (macro rctl (unicode 🤦) rctl)
   spc (macro rctl (unicode ❤) rctl)
   o (macro rctl (unicode 💀) rctl)
-  i (macro rctl (unicode 🤦) rctl)
+  i (macro rctl (unicode 💔) rctl)
   tab (macro rctl (unicode 😐) rctl)
   lsft (macro rctl (unicode 👍) rctl)
   lctrl (macro rctl (unicode 🖐) rctl)
   lmeta (macro rctl (unicode 🙏) rctl)
-
+  ; ret
 )
 
 (deflayermap (persian)
