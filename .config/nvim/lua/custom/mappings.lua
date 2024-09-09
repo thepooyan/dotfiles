@@ -18,7 +18,6 @@ M.general = {
 }
 M.telescope = {
   plugin = true,
-
   n = {
     -- find
     ["<leader>fa"] = { "<cmd> Telescope find_files <CR>", "Find files" },
