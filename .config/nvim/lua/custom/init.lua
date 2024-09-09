@@ -19,3 +19,5 @@ opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevel = 99          -- Open all folds by default
 opt.conceallevel = 2;
 opt.showmode = false
+
+vim.g.nvimtree_side = "right"
