@@ -170,7 +170,7 @@
   v (macro rctl (unicode 🙃) rctl)
   c (macro rctl (unicode 😁) rctl)
   x (macro rctl (unicode 😎) rctl)
-  z (macro rctl (unicode 👉) (unicode 👈) 5 rctl)
+  z (macro rctl (unicode 👈) (unicode 👉) 5 rctl)
 
   t (macro rctl (unicode 🖐) rctl)
   r (macro rctl (unicode 😐) rctl)

@@ -11,7 +11,7 @@ M.general = {
     ["<S-l>"] = {"f l", "jump forward by spaces"},
     ["<S-h>"] = {"F h", "jump backwards by spaces"},
     ["<leader>]"] = { ":Gen<CR>", "" },
-    ["<Esc>"] = { "<cmd>NoiceDismiss<CR>", ""},
+    ["<leader>df"] = { "<cmd>NoiceDismiss<CR>", ""},
   },
   v = {
     [">"] = { ">gv", "indent"},
