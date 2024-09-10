@@ -48,7 +48,7 @@
   fp (fork S-9 S-0 (lsft))
   fc (fork S-[ S-] (lsft))
   fb (fork [ (unmod ]) (lsft))
-  ft (fork S-, . (lsft))
+  ft (fork S-. , (lsft))
 
   typing (layer-switch typing)
 )
