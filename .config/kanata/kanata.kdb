@@ -45,9 +45,15 @@
   f; (fork ; (unmod ret) (lctrl lalt lmeta lsft))
   f' (fork ' bspc (lctrl lalt lmeta lsft))
 
-  fp (fork S-9 S-0 (lsft))
-  fc (fork S-[ S-] (lsft))
-  fb (fork [ (unmod ]) (lsft))
+  tdp (tap-dance-eager 200 (S-9 S-0))
+  fp (fork @tdp S-0 (lsft))
+
+  tdc (tap-dance-eager 200 (S-[ S-]))
+  fc (fork @tdc S-] (lsft))
+
+  tdb (tap-dance-eager 200 ([ (unmod ])))
+  fb (fork @tdb (unmod ]) (lsft))
+
   ft (fork S-. , (lsft))
 
   typing (layer-switch typing)
