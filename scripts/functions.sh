@@ -1,5 +1,9 @@
 #!/bin/bash
 
+getpass() {
+ pass generate --clip $1
+}
+
 tkanata() {
   if systemctl --user is-active --quiet kanata.service; then
     systemctl stop --user kanata.service
