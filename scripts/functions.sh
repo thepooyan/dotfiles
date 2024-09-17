@@ -1,5 +1,9 @@
 #!/bin/bash
 
+board() {
+  nvim ~/.Board/board.md
+}
+
 getpass() {
  pass generate --clip $1
 }

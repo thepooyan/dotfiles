@@ -32,6 +32,10 @@ return {
 				name = "NOTES",
 				path = "/home/pooyan/0 Pooyan/Obsidian/NOTES/",
 			},
+			{
+				name = "Board",
+				path = "/home/pooyan/.Board/",
+			},
 		},
 		new_notes_location = "current_dir",
 
