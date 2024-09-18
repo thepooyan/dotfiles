@@ -1,4 +1,5 @@
 return {
+  enabled = false,
 	"echasnovski/mini.nvim",
 	version = false,
 	event = "VeryLazy",

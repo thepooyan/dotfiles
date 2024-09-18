@@ -1,6 +1,6 @@
 return {
 	"David-Kunz/gen.nvim",
-	lazy = false,
+  event = "VeryLazy",
 	config = function()
 		local gen = require("gen")
 		gen.setup({

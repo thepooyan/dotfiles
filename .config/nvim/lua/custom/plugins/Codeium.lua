@@ -1,4 +1,5 @@
 return {
+  enabled = false,
 	lazy = false,
 	"Exafunction/codeium.nvim",
 	dependencies = {
