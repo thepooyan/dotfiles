@@ -31,24 +31,21 @@ M.mason = {
     -- web dev stuff
     "css-lsp",
     "html-lsp",
-    "deno",
-    -- "prettier",
+    "tailwindcss-language-server",
+    "emmet-ls",
+    "eslint-lsp",
+    "prettierd",
+    "typescript-language-server",
 
     -- c/cpp stuff
     -- "clangd",
     -- "clang-format",
-    "tailwind-languege-server",
-    "emmet-ls",
 
     -- python
-    "pyright",
-    "ruff",
-    "mypy",
-    "black",
-
-    "eslint-lsp",
-    "prettierd",
-    "typescript-language-server",
+    -- "pyright",
+    -- "ruff",
+    -- "mypy",
+    -- "black",
   },
 }
 
