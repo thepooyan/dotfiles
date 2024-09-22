@@ -61,7 +61,7 @@ local plugins = {
 		"hrsh7th/nvim-cmp",
 		opts = {
 			sources = {
-				{ name = "nvim_lsp" },
+        { name = 'nvim_lsp', trigger_characters = { '-' }},
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "nvim_lua" },

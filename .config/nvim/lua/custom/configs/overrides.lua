@@ -36,6 +36,7 @@ M.mason = {
     "eslint-lsp",
     "prettierd",
     "typescript-language-server",
+    "js-debug-adapter",
 
     -- c/cpp stuff
     -- "clangd",

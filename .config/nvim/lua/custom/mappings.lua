@@ -1,4 +1,3 @@
----@type MappingsTable
 local M = {}
 
 M.general = {
@@ -24,6 +23,20 @@ M.telescope = {
     ["<leader>fa"] = { "<cmd> Telescope find_files <CR>", "Find files" },
     ["<leader>ff"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
   }
+}
+
+M.dap = {
+  plugin = true,
+  n = {
+    ["<leader>db"] = {
+      "<cmd> DapToggleBreakpoint <CR>",
+      "Add breakpoint at line"
+    },
+    ["<leader>dr"] = {
+      "<cmd> DapContinue <CR>",
+      "Run or continue the debugger"
+    }
+  },
 }
 
 return M
