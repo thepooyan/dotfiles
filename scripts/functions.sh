@@ -24,6 +24,10 @@ install() {
   nix-env -iA nixpkgs.$1
 }
 
+remove() {
+  nix-env -e $1
+}
+
 docker_cdi() {
   docker rmi $(docker images -f "dangling=true" -q)
 }

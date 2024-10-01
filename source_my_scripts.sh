@@ -14,4 +14,3 @@ alias ls="eza --icons --git"
 alias lh="eza --icons --git -l"
 alias tree="eza --tree"
 alias upm="/home/pooyan/dotfiles/scripts/upm/upm.sh"
-alias npm=pnpm
