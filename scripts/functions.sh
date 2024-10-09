@@ -157,8 +157,8 @@ fuzzyFindFolder() {
   find . -type d | fzf
 }
 
-nekorays() {
-  get_pass pass | sudo -S nekoray
+nekoray() {
+  get_pass pass | sudo -S ~/appImages/nekoray
 }
 
 clipboard() {
