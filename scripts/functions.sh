@@ -157,12 +157,8 @@ fuzzyFindFolder() {
   find . -type d | fzf
 }
 
-nekoray() {
-  get_pass pass | sudo -S ~/appImages/nekoray/nekoray-3.19-2023-08-30-linux-x64.AppImage
-}
-
-obsidian() {
-  ~/appImages/Obsidian/Obsidian-1.5.3.AppImage
+nekorays() {
+  get_pass pass | sudo -S nekoray
 }
 
 clipboard() {

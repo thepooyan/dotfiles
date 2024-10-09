@@ -63,3 +63,10 @@ eval "$(starship init zsh)"
 
 export PATH="$PATH:$HOME/.config/emacs/bin/"
 export EDITOR="nvim"
+
+# bun completions
+[ -s "/home/pooyan/.bun/_bun" ] && source "/home/pooyan/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
