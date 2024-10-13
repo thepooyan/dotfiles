@@ -7,7 +7,7 @@ return {
     require("nvim-surround").setup({
       -- Configuration here, or leave empty to use defaults
       keymaps = {
-        visual = "s",
+        visual = "ys",
         delete = "ds",
         change = "cs",
       },
