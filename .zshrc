@@ -14,6 +14,8 @@ zinit light Aloxaf/fzf-tab
 zinit ice depth=1
 zinit light jeffreytse/zsh-vi-mode
 
+export ZVM_VI_SURROUND_BINDKEY="s-prefix"
+
 autoload -Uz compinit && compinit
 
 # History
