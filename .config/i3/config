@@ -201,7 +201,7 @@ mode "luncher" {
   bindsym a exec arandr; mode "default"
   bindsym b exec blueman-manager; mode "default"
   bindsym k exec kdeconnect-app; mode "default"
-  bindsym n exec "pass show pass | sudo -S ~/appImages/nekoray/nekoray-3.19-2023-08-30-linux-x64.AppImage"; mode "default"
+  bindsym n exec "pass show pass | sudo -S ~/appImages/nekoray"; mode "default"
   bindsym Escape mode "default"
 }
 bindsym $mod+z mode "luncher"
