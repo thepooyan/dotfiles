@@ -171,11 +171,11 @@ clipboard() {
   }
 
   clickdent() {
-    sshpass -p $(get_pass clickdent/pass) ssh -p 8022 $(get_pass clickdent/ip)
+    sshpass -p $(get_pass servers/clickdent/pass) ssh -p 8022 $(get_pass servers/clickdent/ip)
   }
 
   sendTo() {
-    sshpass -p "$(get_pass clickdent/pass)" scp -P 8022 $1 $(pass show clickdent/ip):/home/salmani
+    sshpass -p "$(get_pass servers/clickdent/pass)" scp -P 8022 $1 $(pass show servers/clickdent/ip):/home/salmani
   }
 
   viewClipboard() {
