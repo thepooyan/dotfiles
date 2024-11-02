@@ -201,7 +201,7 @@ mode "luncher" {
   bindsym a exec arandr; mode "default"
   bindsym b exec blueman-manager; mode "default"
   bindsym k exec kdeconnect-app; mode "default"
-  bindsym n exec "pass show pass | sudo -S ~/appImages/nekoray"; mode "default"
+  bindsym n exec "~/appImages/nekoray"; mode "default"
   bindsym Escape mode "default"
 }
 bindsym $mod+z mode "luncher"
@@ -228,6 +228,7 @@ exec --no-startup-id "~/dotfiles/scripts/logger.sh ~/dotfiles/scripts/boot.sh"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always "source /home/pooyan/dotfiles/scripts/background/background.sh; background random"
 
+exec_always --no-startup-id i3-msg 'workspace 1; exec  sudo "~/appImages/nekoray"'
 exec --no-startup-id i3-msg "workspace 6; exec vivaldi"
 
 exec i3-msg workspace 22
