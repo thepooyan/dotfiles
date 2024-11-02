@@ -175,7 +175,6 @@ bindsym $mod+Mod1+Down exec "i3-msg resize grow down 10 px or 10 ppt || i3-msg r
 bindsym $mod+Mod1+Up exec "i3-msg resize grow up 10 px or 10 ppt || i3-msg resize shrink down 10 px or 10 ppt"
 bindsym $mod+Mod1+Right exec "i3-msg resize grow right 10 px or 10 ppt || i3-msg resize shrink left 10 px or 10 ppt"
 
-bindsym $mod+o exec "~/appImages/Obsidian/Obsidian-1.5.3.AppImage"
 bindsym $mod+g exec google-chrome-stable
 bindsym $mod+y exec vivaldi
 bindsym $mod+u exec "~/dotfiles/scripts/search.sh"
@@ -189,7 +188,7 @@ gaps outer 1
 
 default_border pixel 0
 
-bindsym $mod+Tab exec --no-startup-id "i3-msg workspace number $(/home/pooyan/.config/i3/back_n_fourth.sh)"
+bindsym $mod+o exec --no-startup-id "i3-msg workspace number $(/home/pooyan/.config/i3/back_n_fourth.sh)"
 bindsym $mod+Shift+Tab exec --no-startup-id "i3-msg move workspace number $(/home/pooyan/.config/i3/back_n_fourth.sh)"
 workspace_auto_back_and_forth yes
 bindsym Print exec --no-startup-id "flameshot gui"
