@@ -38,6 +38,9 @@ M.mason = {
     "typescript-language-server",
     "js-debug-adapter",
 
+    -- go
+    "gopls",
+
     -- c/cpp stuff
     -- "clangd",
     -- "clang-format",
