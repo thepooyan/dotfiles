@@ -41,6 +41,9 @@ M.mason = {
     -- go
     "gopls",
 
+    -- rust
+    "rust-analyzer",
+
     -- c/cpp stuff
     -- "clangd",
     -- "clang-format",
