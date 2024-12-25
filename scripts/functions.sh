@@ -1,5 +1,9 @@
 #!/bin/bash
 
+totalCode() {
+  find . -name "*.$1" -print0 | xargs -0 wc -l | awk '{total += $1} END {print total}'
+}
+
 board() {
   nvim ~/.Board/board.md
 }
