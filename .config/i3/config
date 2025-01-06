@@ -201,6 +201,7 @@ mode "luncher" {
   bindsym b exec blueman-manager; mode "default"
   bindsym k exec kdeconnect-app; mode "default"
   bindsym n exec "~/appImages/nekoray"; mode "default"
+  bindsym c exec xcolor -s; mode "default"
   bindsym Escape mode "default"
 }
 bindsym $mod+z mode "luncher"
