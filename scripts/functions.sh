@@ -1,5 +1,10 @@
 #!/bin/bash
 
+cm() {
+  git ad
+  git cm "$*"
+}
+
 totalCode() {
   find . -name "*.$1" -print0 | xargs -0 wc -l | awk '{total += $1} END {print total}'
 }
