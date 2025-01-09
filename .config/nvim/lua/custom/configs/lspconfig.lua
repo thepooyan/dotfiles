@@ -29,19 +29,19 @@ lspconfig.gopls.setup {
   }
 }
 
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = {"rust", "rs"},
-  root_dir = util.root_pattern("Cargo.toml"),
-  settings = {
-    ['rust-analyzer'] = {
-      cargo = {
-        allFeatures = true
-      }
-    }
-  }
-}
+-- lspconfig.rust_analyzer.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   filetypes = {"rust", "rs"},
+--   root_dir = util.root_pattern("Cargo.toml"),
+--   settings = {
+--     ['rust-analyzer'] = {
+--       cargo = {
+--         allFeatures = true
+--       }
+--     }
+--   }
+-- }
 
 -- -- -- emmet
 -- capabilities.textDocument.completion.completionItem.snippetSupport = true
