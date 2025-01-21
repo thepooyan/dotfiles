@@ -77,3 +77,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # go
 # /home/pooyan/go
 export PATH="$HOME/go/bin:$PATH"
+
+alias td=todo.sh
