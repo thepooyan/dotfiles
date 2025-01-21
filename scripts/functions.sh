@@ -1,5 +1,16 @@
 #!/bin/bash
 
+tdl() {
+  todo.sh ls
+  echo 
+  read something
+  clear
+  eval "todo.sh $something"
+  echo 
+  echo
+  tdl
+}
+ 
 cm() {
   git ad
   git cm "$*"
