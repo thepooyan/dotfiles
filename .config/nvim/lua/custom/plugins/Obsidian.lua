@@ -10,27 +10,27 @@ return {
 		workspaces = {
 			{
 				name = "Documentation",
-				path = "/home/pooyan/0 Pooyan/Obsidian/Documentation/",
+				path = "/home/pooyan/Pooyan/Obsidian/Documentation/",
 			},
 			{
 				name = "mini",
-				path = "/home/pooyan/0 Pooyan/Obsidian/mini/",
+				path = "/home/pooyan/Pooyan/Obsidian/mini/",
 			},
 			{
 				name = "Brain",
-				path = "/home/pooyan/0 Pooyan/Obsidian/Brain/",
+				path = "/home/pooyan/Pooyan/Obsidian/Brain/",
 			},
 			{
 				name = "Thoughts",
-				path = "/home/pooyan/0 Pooyan/Obsidian/Thoughts",
+				path = "/home/pooyan/Pooyan/Obsidian/Thoughts",
 			},
 			{
 				name = "VHG",
-				path = "/home/pooyan/0 Pooyan/Obsidian/VGH/",
+				path = "/home/pooyan/Pooyan/Obsidian/VGH/",
 			},
 			{
 				name = "NOTES",
-				path = "/home/pooyan/0 Pooyan/Obsidian/NOTES/",
+				path = "/home/pooyan/Pooyan/Obsidian/NOTES/",
 			},
 			{
 				name = "Board",
