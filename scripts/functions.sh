@@ -126,7 +126,7 @@ not() {
   # after exit
 
   if git diff --quiet; then
-    echo "No differences found"
+    echo "Empty diff"
     return
   fi
 
