@@ -11,6 +11,7 @@ M.general = {
     ["<S-h>"] = {"F h", "jump backwards by spaces"},
     ["<leader>]"] = { ":Gen<CR>", "" },
     ["<leader>df"] = { "<cmd>NoiceDismiss<CR>", ""},
+    ["<leader>X"] = { ":tabdo %bd<CR>", ""},
     -- ["<leader>q"] = { "yi\"di\"hdlcl{`<Esc>\"0pi`}", ""},
   },
   v = {
