@@ -202,6 +202,10 @@ clipboard() {
     xclip -o -sel clip
   }
 
+  watchc() {
+    ls * | entr -c $@
+  }
+
   watch() {
     if [ -f $1 ]; then 
       if [ ! -x $1 ];then
