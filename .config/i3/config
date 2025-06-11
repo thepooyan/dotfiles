@@ -214,6 +214,7 @@ mode "command" {
   bindsym h exec "systemctl hibernate"; mode "default"
   bindsym e exec "i3-msg exit"; mode "default"
   bindsym m exec "~/dotfiles/scripts/logger.sh ~/dotfiles/scripts/setup_monitors.sh"; mode "default"
+  bindsym b exec "~/dotfiles/scripts/logger.sh ~/dotfiles/scripts/boot.sh"; mode "default"
   bindsym Escape mode "default"
 }
 bindsym $mod+c mode "command"
@@ -222,6 +223,7 @@ exec --no-startup-id "/home/pooyan/.config/i3/record_workspace_stack.sh"
 exec --no-startup-id picom
 
 exec --no-startup-id "~/dotfiles/scripts/logger.sh ~/dotfiles/scripts/setup_monitors.sh"
+exec --no-startup-id "~/dotfiles/scripts/logger.sh ~/dotfiles/scripts/boot.sh"
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always "source /home/pooyan/dotfiles/scripts/background/background.sh; background random"
