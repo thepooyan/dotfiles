@@ -1,5 +1,9 @@
 #!/bin/bash
 
+listFileTypes() {
+ find . -type f -name '*.*' | sed -n 's/.*\.//p' | sort -u
+}
+
 tdl() {
   todo.sh ls
   echo 
