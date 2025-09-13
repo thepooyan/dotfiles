@@ -70,6 +70,11 @@ export EDITOR="nvim"
 # bun completions
 [ -s "/home/pooyan/.bun/_bun" ] && source "/home/pooyan/.bun/_bun"
 
+# env
+if [ -f "$HOME/dotfiles/.env" ]; then
+    export $(grep -v '^#' $HOME/dotfiles/.env | xargs)
+fi
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
